@@ -25,22 +25,24 @@
             <!--/////////////////////////////// login ////////////////////////-->
 
 
-            <form id="login" class="input-group">
+            <form id="login" class="input-group" action = "../php/logCheck.php" method = "POST">
                 <input type="text" name="uname" class="input-field" placeholder="Username" required>
                 <input type="text" name="password" class="input-field" placeholder="password" required>
                 <input type="checkbox" name="rememberme" class="check-box"><span>Remember me</span>
-                <button type="submit" class="submit-btn">Log In</button>
+                <button type="submit" name="submit" class="submit-btn">Log In</button>
 
             </form>
 
                         <!--/////////////////////////////// register  ////////////////////////-->
 
-            <form id="register" class="input-group">
+            <form id="register" class="input-group" action = "../php/regCheck.php" method = "POST">
                 <input type="text" name="name" class="input-field" placeholder="Name" required>
                 <input type="text" name="email" class="input-field" placeholder="Email" required>
                 <input type="text" name="uname" class="input-field" placeholder="Username" required>
                  
                 <input type="text" name="password" class="input-field" placeholder="Password" required>
+                <input type="text" name="cpassword" class="input-field" placeholder="Confirm Password" required>
+
                 <input type="radio" name="gender" class="radio" value="male"><span id ="male">male</span>
                 <input type="radio" name="gender" class="radio" value="female"><span id ="female">female</span>
                 <input type="radio" name="gender" class="radio" value="other" ><span id ="other">other</span>
@@ -54,7 +56,7 @@
                     
                  </select> <br>
                  
-                <button type="submit" class="submit-btn">Register</button>
+                <button type="submit" name="submit" class="submit-btn">Register</button>
                
             </form>
 
