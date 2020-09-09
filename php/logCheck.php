@@ -50,7 +50,7 @@ if(isset($_POST['submit']))
                   
                   
                  
-                  header('location: doctor_dashboard.php');
+                  header('location: ../views/doctor_dashboard.php');
                 
                  
                }
@@ -66,7 +66,7 @@ if(isset($_POST['submit']))
                 setcookie('gender', $_POST['gender'], time()+3600, '/');
 
                 setcookie('dob', $_POST['dob'], time()+3600, '/');               
-                header('location: doctor_dashboard.php');
+                header('location: ../views/doctor_dashboard.php');
 
                
                }
@@ -76,13 +76,13 @@ if(isset($_POST['submit']))
                }
                else if($data['user_type']=='Customer')
                {
-                header('location: customer_dashboard.html');
+                header('location: ../views/customer_dashboard.html');
 
 
                }
                else if($data['user_type']=='Intern')
                {
-                header('location: intern_dashboard.html');
+                header('location: ../views/intern_dashboard.html');
 
                
                }
@@ -102,7 +102,7 @@ if(isset($_POST['submit']))
     }
     else{
 
-        header ('location: login.php');
+        header ('location: ../views/login.php');
     }
 
 
