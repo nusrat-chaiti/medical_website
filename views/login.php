@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/style.css">
-    <!-- <script type="text/javascript" src="../assets/register.js"></script>
-    <script type="text/javascript" src="../assets/login.js"></script> -->
+
+    <script type="text/javascript" src="../assets/js/register.js"></script>
+    <!-- <script type="text/javascript" src="../assets/login.js"></script> -->
     <!-- <script type="text/javascript" src="../assets/togg-btn.js"></script> -->
     
     <title>login and registration</title>
@@ -26,7 +27,7 @@
             <!--/////////////////////////////// login ////////////////////////-->
 
 
-            <form id="login" class="input-group" action = "../php/logCheck.php" method = "POST">
+            <form id="login" class="input-group" action = "../php/logCheck.php"  method = "POST">
                 <input type="text" name="uname" class="input-field" placeholder="Username" required>
                 <input type="text" name="password" class="input-field" placeholder="password" required>
                 <input type="checkbox" name="rememberme" class="check-box"><span>Remember me</span>
@@ -38,19 +39,19 @@
 
                         <!--/////////////////////////////// register  ////////////////////////-->
 
-            <form id="register" class="input-group" action = "../php/regCheck.php" method = "POST">
-                <input type="text" name="name" class="input-field" placeholder="Name" required>
-                <input type="text" name="email" class="input-field" placeholder="Email" required>
-                <input type="text" name="uname" class="input-field" placeholder="Username" required>
+            <form id="register" class="input-group" action = "../php/regCheck.php" onsubmit="return validate()" method = "POST">
+                <input type="text" name="name" id="name" class="input-field" placeholder="Name" onkeyup="nremover()" onblur="nempty()" required> <b><i id="name_Msg"></i></b><br>
+                <input type="text" name="email" id="email" class="input-field" placeholder="Email" onkeyup="eremover()" onblur="empty()" required> <b><i id="email_Msg"></i></b><br>
+                <input type="text" name="uname" id="uname" class="input-field" placeholder="Username" onkeyup="unremover()" onblur="unempty()" required> <b><i id="uname_Msg"></i></b><br>
                  
-                <input type="text" name="password" class="input-field" placeholder="Password" required>
-                <input type="text" name="cpassword" class="input-field" placeholder="Confirm Password" required>
+                <input type="password" id="password" name="password" id="password" class="input-field" placeholder="Password" onkeyup="premover()" onblur="pempty()" required> <b><i id="pass_Msg"></i></b><br>
+                <input type="password"id="cpassword" name="cpassword" class="input-field" placeholder="Confirm Password" onkeyup="cpremover()" onblur="cpempty()" required> <b><i id="cpass_Msg"></i></b><br>
 
                 <input type="radio" name="gender" class="radio" value="male"><span id ="male">male</span>
                 <input type="radio" name="gender" class="radio" value="female"><span id ="female">female</span>
-                <input type="radio" name="gender" class="radio" value="other" ><span id ="other">other</span>
-                <input type="date" name="dob" class="input-field"  placeholder="date of birth" required>
-                <select id ="utype" name="user_type">
+                <input type="radio"  name="gender" class="radio" value="other" ><span id ="other">other</span>
+                <input type="date" id="dob" name="dob" class="input-field"  placeholder="date of birth" onkeyup="dobremover()" onblur="dobempty()" required>
+                <select id ="utype" name="user_type" >
                     <option value="">Select User Type</option>
     
                     <option value="Doctor">Doctor</option>
@@ -59,7 +60,7 @@
                     
                  </select> <br>
                  
-                <button type="submit" name="submit" class="submit-btn">Register</button>
+                <button type="submit" name="submit" class="submit-btn" onclick="f1()">Register</button>
                
             </form>
 
