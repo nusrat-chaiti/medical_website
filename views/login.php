@@ -47,18 +47,23 @@
                 <input type="password" id="password" name="password" id="password" class="input-field" placeholder="Password" onkeyup="premover()" onblur="pempty()" required> <b><i id="pass_Msg"></i></b><br>
                 <input type="password"id="cpassword" name="cpassword" class="input-field" placeholder="Confirm Password" onkeyup="cpremover()" onblur="cpempty()" required> <b><i id="cpass_Msg"></i></b><br>
 
-                <input type="radio" name="gender" class="radio" value="male"><span id ="male">male</span>
-                <input type="radio" name="gender" class="radio" value="female"><span id ="female">female</span>
-                <input type="radio"  name="gender" class="radio" value="other" ><span id ="other">other</span>
-                <input type="date" id="dob" name="dob" class="input-field"  placeholder="date of birth" onkeyup="dobremover()" onblur="dobempty()" required>
-                <select id ="utype" name="user_type" >
+                <input type="radio" name="gender" class="radio" value="male" id="r_male" onclick="gremover()"  onmouseout="gempty()" ><span id ="male">male</span>
+                <input type="radio" name="gender" class="radio" value="female" id="r_female" onclick="gremover()"  onmouseout="gempty()" ><span id ="female">female</span>
+                <input type="radio"  name="gender" class="radio" value="other" id="r_other" onclick="gremover()"  onmouseout="gempty()"><span id ="other">other</span>  
+                <b><i id="gender_Msg"></i></b><br>
+                
+
+
+                <input type="date" id="dob" name="dob" class="input-field"  placeholder="date of birth" onkeyup="dobremover()" onblur="dobempty()" onclick="dobremover()" required> <b><i id="dob_Msg"></i></b><br>
+
+                <select id ="utype" name="user_type"  onmouseout="utempty()" onclick="utremover()" onmouseover="utremover()"><b><i id="ut_Msg"></i></b><br>
                     <option value="">Select User Type</option>
     
                     <option value="Doctor">Doctor</option>
                     <option value="Customer">Customer</option>
                     <option value="Intern">Intern</option>
                     
-                 </select> <br>
+                 </select> <b><i id="ut_Msg"></i></b><br>
                  
                 <button type="submit" name="submit" class="submit-btn" onclick="f1()">Register</button>
                

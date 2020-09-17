@@ -40,6 +40,46 @@ function nremover()
     document.getElementById('name_Msg').innerHTML = "";
     
 }
+
+
+//username validation
+
+
+function unempty()
+{
+   var uname = document.getElementById("uname").value;
+   var ulength =uname.length;
+   
+   if(uname == "")
+   {  
+       document.getElementById("uname_Msg").innerHTML="user name field can't be empty";
+       
+   }
+
+   else if( (uname>='A' && uname<='Z' || uname>='a'&& uname<='z') && ulength< 2)
+   {   
+        document.getElementById("uname_Msg").innerHTML=" Name length can't be less then 2";  
+       
+   }
+   
+   
+   
+
+   else if( uname>='A' && uname<='Z' || uname>='a'&& uname<='z')
+   {
+       Validate();
+       
+   } 
+
+   
+}
+ 
+function unremover()
+{
+   document.getElementById('uname_Msg').innerHTML = "";
+   
+}
+
 // email check
 
 
@@ -140,7 +180,133 @@ function premover()
 }
 
 
+//confirm password validation
 
+function cpempty()
+{ 
+    var cpassword = document.getElementById("cpassword").value;
+    var password = document.getElementById("password").value;
+
+
+    if(cpassword=="")
+    {
+        document.getElementById("cpass_Msg").innerHTML=" confirm password field can't be empty";
+
+    }
+    else if(password != cpassword)
+    {
+        document.getElementById("cpass_Msg").innerHTML="incorrect confirm password";
+
+    }
+
+    else
+    {
+         return true;
+       
+    }
+}
+
+function cpremover()
+{
+    document.getElementById("cpass_Msg").innerHTML="";
+}
+
+
+//date validation
+
+
+function dobempty()
+{
+   var dob = document.getElementById("dob").value;
+   var date=new Date(dob);
+   var month= date.getMonth();
+   var day= date.getDate();
+   var year= date.getFullYear();
+
+   //var year= document.getElementById("dob").innerHTML=dob.getFullYear();
+   
+   if(dob == "")
+   {  
+       document.getElementById("dob_Msg").innerHTML="date field can't be empty";
+       
+   }
+   else if(year > 2005)
+   {
+    document.getElementById("dob_Msg").innerHTML="your age should be greater than 15";
+
+   }
+else
+{
+    return true;
+}
+
+   
+
+   
+}
+ 
+function dobremover()
+{
+   document.getElementById('dob_Msg').innerHTML = "";
+   
+}
+
+// gender validation
+
+
+function gempty()
+{ 
+    if(document.getElementById("r_male").checked)
+    {
+        return true;
+    }
+    else if(document.getElementById("r_female").checked)
+    { 
+        return true;
+
+    }
+    else if(document.getElementById("r_other").checked)
+    {
+        return true;
+
+    }
+    else
+    {
+        document.getElementById("gender_Msg").innerHTML="please select your gender...";
+       
+    }
+   
+}
+
+function gremover()
+{
+    document.getElementById("gender_Msg").innerHTML="";
+}
+
+// user type validation
+
+
+function utremover()
+{
+    document.getElementById("ut_Msg").innerHTML="";
+}
+
+
+
+function utempty()
+{ 
+    var utype = document.getElementById("utype").value;
+
+    if(utype== "")
+    {
+        document.getElementById("ut_Msg").innerHTML="please select your type";
+       
+    }
+    else
+    {
+        return true;
+    }
+}
  
 
 
