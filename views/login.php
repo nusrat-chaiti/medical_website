@@ -6,19 +6,20 @@
     <link rel="stylesheet" href="../assets/style.css">
     <!-- <script type="text/javascript" src="../assets/register.js"></script>
     <script type="text/javascript" src="../assets/login.js"></script> -->
-    <script type="text/javascript" src="../assets/togg-btn.js"></script>
+    <!-- <script type="text/javascript" src="../assets/togg-btn.js"></script> -->
     
-    <title>login</title>
+    <title>login and registration</title>
 </head>
 <body>
-    
+
 
     <div class="hero">
+
         <div class="form-box">
             <div  class="button-box">
                 <div id="btn"></div>
-                <button type="button" class="toggle-btn" onclick="login()">LOGIN</button>
-                <button type="button" class="toggle-btn" onclick="register()">REGISTER</button>
+                <button type="button" class="toggle-btn" id="tog-1" onclick="login_f()">LOGIN</button>
+                <button type="button" class="toggle-btn" id="tog-2" onclick="register()">REGISTER</button>
 
             </div>
                 
@@ -32,6 +33,8 @@
                 <button type="submit" name="submit" class="submit-btn">Log In</button>
 
             </form>
+
+            
 
                         <!--/////////////////////////////// register  ////////////////////////-->
 
@@ -61,35 +64,15 @@
             </form>
 
         </div>
-        <script>
-            "use strict"
-    
-    var tog_login = document.getElementById("login");
-    var tog_register=document.getElementById("register");
-    var tog_btn = document.getElementById("btn");
-    
-    function login()
-    {
-      
-        tog_login.style.left = "50px";
-       tog_register.style.left = "450px";
-       tog_btn.style.left = "0px";
-    
-    
-    
-    }
-    
-    function register()
-    {
-        tog_login.style.left = "-400px";
-       tog_register.style.left = "50px";
-       tog_btn.style.left = "110px";
-    }
-        </script>
+
+       
 
     </div>
+    <script type="text/javascript" src="../assets/togg-btn.js"></script>
+
 
     <header>
+
         
         <div class="menu">
             <ul>
