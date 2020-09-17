@@ -41,7 +41,7 @@
 
             <form id="register" class="input-group" action = "../php/regCheck.php" onsubmit="return validate()" method = "POST">
                 <input type="text" name="name" id="name" class="input-field" placeholder="Name" onkeyup="nremover()" onblur="nempty()" required> <b><i id="name_Msg"></i></b><br>
-                <input type="text" name="email" id="email" class="input-field" placeholder="Email" onkeyup="eremover()" onblur="empty()" required> <b><i id="email_Msg"></i></b><br>
+                <input type="email" name="email" id="email" class="input-field" placeholder="Email" onkeyup="eremover()" onblur="eempty()" onmouseout="eempty()" required > <b><i id="email_Msg"></i></b><br>
                 <input type="text" name="uname" id="uname" class="input-field" placeholder="Username" onkeyup="unremover()" onblur="unempty()" required> <b><i id="uname_Msg"></i></b><br>
                  
                 <input type="password" id="password" name="password" id="password" class="input-field" placeholder="Password" onkeyup="premover()" onblur="pempty()" required> <b><i id="pass_Msg"></i></b><br>

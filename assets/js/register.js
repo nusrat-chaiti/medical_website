@@ -83,49 +83,55 @@ function unremover()
 // email check
 
 
-// function f1()
-// {
-//     var name=document.getElementById('name').value;
-//     var email=document.getElementById('email').value;
-// 	var password=document.getElementById('password').value;
+function f1()
+{
+        var name=document.getElementById('name').value;
+        var email=document.getElementById('email').value;
+        var password=document.getElementById('password').value;
+        var cpassword=document.getElementById('cpassword').value;
+        var uname=document.getElementById('uname').value;
+        var gender=document.getElementsByName('gender').value;
+        var utype=document.getElementById('utype').value;
+        var dob=document.getElementById('dob').value;
 
-// 			if(name!="" && email!="" && password!="" && document.getElementById('email_Msg').innerHTML=="")
-// 			{
+
+
+
+
+			if(name!="" && email!="" && uname!="" && password!="" && cpassword!="" && gender!="" && utype!="" && dob!="" && document.getElementById('email_Msg').innerHTML=="")
+			{
 				
-// 				var xhttp = new XMLHttpRequest();
-// 			 xhttp.open('POST', '../php/regCheck.php', true);
-// 			 xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-// 			 xhttp.send('name='+name+'&'+'password='+password+'&'+'email='+email);
+				var xhttp = new XMLHttpRequest();
+			  xhttp.open('POST', '../php/regCheck.php', true);
+			  xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+			  xhttp.send('name='+name+'&'+'password='+password+'&'+'email='+email+'&'+'uname='+uname+'&'+'cpassword='+cpassword+'&'+'gender='+gender+'&'+'utype='+utype+'&'+'dob='+dob);
 
-//              xhttp.onreadystatechange = function ()
-//              {
-//                 if(this.readyState == 4 && this.status == 200)
-//                 {
+             xhttp.onreadystatechange = function ()
+             {
+                if(this.readyState == 4 && this.status == 200)
+                {
 
-//                     if(this.responseText != "")
-//                     {
-//                         document.getElementById('email_Msg').innerHTML = this.responseText;
-//                         document.getElementsByTagName('a')[0].style.display='inline';
+                    if(this.responseText != "")
+                    {
+                        document.getElementById('email_Msg').innerHTML = this.responseText;
+                       // document.getElementsByTagName('a')[0].style.display='inline';
 
-//                     }
-//                     else
-//                     {
-//                         document.getElementById('email_Msg').innerHTML = "";
-//                     }
+                    }
+                    else
+                    {
+                        document.getElementById('email_Msg').innerHTML = "";
+                    }
                     
-//                 }	
-//             }
+                }	
+            }
             
-// 				//document.getElementsByTagName('a')[0].style.display='inline';
-// 			}
+				//document.getElementsByTagName('a')[0].style.display='inline';
+			}
     
-// }
+}
   
 
-// function empty()
-// {
 
-// }
 function eremover()  
 {
     var email = document.getElementById('email').value;
@@ -143,15 +149,53 @@ function eremover()
         {
             document.getElementById('email_Msg').innerHTML = this.responseText;
         }
+        
         else
         {
             document.getElementById('email_Msg').innerHTML = "";
         }
         
-    }	
+      }	
     }
-
+   
+    
 }
+
+// function eempty()
+// {
+//     var emailvalid=false;
+//     if(email!="")
+// 	{
+// 		if(email.split("@").length>=2)
+// 		{
+// 			emailsplit=email.split("@");
+// 			if(emailsplit[1].split(".").length>=2)
+// 			{
+				
+// 				document.getElementById('email_Msg').innerHTML="";
+// 				emailvalid=true;
+// 				break;
+// 			}
+// 			else
+// 			{
+// 				document.getElementById('email_Msg').innerHTML="Please enter valid email. .com is missing";
+// 				emailvalid=false;
+// 			}
+// 		}
+// 		else
+// 		{
+// 			document.getElementById('email_Msg').innerHTML="Please enter valid email";
+// 			emailvalid=false;
+// 		}
+// 	}
+// 	else
+// 	{
+// 		document.getElementById('email_Msg').innerHTML="Field cannot be empty";
+// 		emailvalid=false;
+//     }
+
+
+// }
 
 
 ///validation of pass

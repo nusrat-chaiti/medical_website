@@ -1,5 +1,5 @@
 <?php
-	require_once('../db/db.php');
+	require_once('../db/dbf.php');
 
 	function getByID($userName){
 		$conn = dbConnection();
@@ -91,7 +91,7 @@
 	function checkEmail($email)
 	{
 		$conn = dbConnection();
-		$sql = "select * from interns where Email='{$email}'";
+		$sql = "select * from customer where Email='{$email}'";
 		if(mysqli_query($conn, $sql)){
 			$result=mysqli_query($conn, $sql);
 			$user = mysqli_fetch_assoc($result);
