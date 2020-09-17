@@ -27,9 +27,9 @@
             <!--/////////////////////////////// login ////////////////////////-->
 
 
-            <form id="login" class="input-group" action = "../php/logCheck.php"  method = "POST">
-                <input type="text" name="uname" class="input-field" placeholder="Username" required>
-                <input type="text" name="password" class="input-field" placeholder="password" required>
+            <form id="login" class="input-group" action = "../php/logCheck.php" onsubmit="return validate()"  method = "POST">
+                <input type="text" id="uname" name="uname" class="input-field" placeholder="Username" onkeyup="unremover()" onblur="unempty()"  required> <b><i id="uname_Msg"></i></b><br>
+                <input type="password" id="password" name="password" class="input-field" placeholder="password"  onkeyup="premover()" onblur="pempty()" required> <b><i id="pass_Msg"></i></b><br>
                 <input type="checkbox" name="rememberme" class="check-box"><span>Remember me</span>
                 <button type="submit" name="submit" class="submit-btn">Log In</button>
 
