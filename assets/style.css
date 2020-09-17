@@ -365,7 +365,6 @@ span{
 {
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../image/index-2.jpg);
   background-position: center;
   background-size: cover;
   position: absolute;
@@ -378,6 +377,7 @@ span{
 {
   width: 400px;
   height: 540px;
+  top: 60px;
   position: relative;
   margin: 10% auto;
   background:transparent;
@@ -385,4 +385,15 @@ span{
   overflow: hidden;
 
 
+}
+.footer
+{
+  width: 400px;
+  height: 25px;
+  bottom: 40px;
+  background-position: center;
+  position: relative;
+  margin: 5% auto;
+  background:transparent;
+  padding: 5px;
 }
