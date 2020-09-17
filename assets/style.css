@@ -28,11 +28,12 @@ h1,h2,h3,h4,h5,h6{
 {
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../image/dashboard.jpg);
+  /* background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../image/dashboard.jpg); */
   background-position: center;
   background-size: cover;
   position: absolute;
 }
+
 .wave{
   position: absolute;
   width: 100%;
@@ -355,5 +356,33 @@ span{
   margin-top: 15px;
   margin-bottom: 15px;
   color: #777;
+
+}
+
+/* ////////doctor dashboard//////////// */
+
+.dash-info
+{
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../image/index-2.jpg);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../image/dashboard.jpg);
+
+  
+
+}
+.dash_text
+{
+  width: 400px;
+  height: 540px;
+  position: relative;
+  margin: 10% auto;
+  background:transparent;
+  padding: 5px;
+  overflow: hidden;
+
 
 }

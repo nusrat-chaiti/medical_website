@@ -9,17 +9,24 @@
     <title>doctor dashboard</title>
 </head>
 <body>
-    <div class="wrap_doc">
+<div class="dash-info">
+          <div class="dash_text">
+          <h2><b><i>WELCOME TO YOUR ACCOUNT!! <?php echo $_COOKIE['uname']; ?> </i></b></h2><br><br>
+          <h1>you can get started by seeing your patients and can see your appointments.</h1>
+        </div>
+</div> 
+
+
        <header>
            <div class="menu">
                <ul>
-                   <li><a href="#">Home</a></li>
-                   <li><a href="views/login.php">Login</a></li>
-                   <li><a href="#">Blog</a></li>
-                   <li><a href="#">Doctors</a></li>
-                   <li><a href="#">Interns</a></li>
-                   <li><a href="#">Corona Section</a></li>
-                   <li><a href="#">Contact us</a></li>
+                  <li><a href="#">home</a></li>
+
+                   <li><a href="#">patient</a></li>
+                   <li><a href="#">appointment</a></li>
+                   <li><a href="#">My profile</a></li>
+                   <li><a href="#">logout</a></li>
+                   
 
 
                </ul>
@@ -28,10 +35,13 @@
        </header>
        
 
-    </div>
-    <div>
-        
-    </div>
+
+    
+
+    
+
+    
+    
     
 </body>
 </html>
