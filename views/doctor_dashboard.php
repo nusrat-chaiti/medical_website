@@ -29,10 +29,10 @@
                <ul>
                   <li><a href="#">home</a></li>
 
-                   <li><a href="#">patient</a></li>
+                   <li><a href="all_patients.php">patient</a></li>
                    <li><a href="#">appointment</a></li>
-                   <li><a href="#">My profile</a></li>
-                   <li><a href="#">logout</a></li>
+                   <li><a href="profile.php">My profile</a></li>
+                   <li><a href="../php/logout.php">logout</a></li>
                    
 
 
