@@ -6,7 +6,7 @@
 
   if(isset($_POST['submit']))
 	{
-       
+    
 
 
 
@@ -23,6 +23,14 @@
             $user_type = $_POST['user_type'];
             $gender=$_POST['gender'];
 
+            ///////////
+            $user = [
+              'uname'=> $uname,
+              'password'=> $password,
+              'email'=> $email,
+              'user_type'=>$user_type
+            ];
+
             //checking password
 
 			if($_POST['password'] == $_POST['cpassword'])
@@ -34,7 +42,7 @@
                 if(mysqli_query($conn, $sql))
              {
                
-                header('location:login.html');   //need to do php
+                header('location:login.php');   //need to do php
                 echo "Insert successfull";
                
              }
@@ -42,6 +50,12 @@
 
                 echo "inset is not successful, please try again...";
              }
+             if($user_type =='doctor')
+             {
+              $sql2 = "insert into doctor values ('{$user['name']}','{$user['uname']}','{$user['email']}' ,'x', 'Y', 'Z','A','B','C')";
+
+             }
+
 
 
 

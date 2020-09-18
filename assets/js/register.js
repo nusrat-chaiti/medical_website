@@ -229,7 +229,7 @@ function premover()
 function cpempty()
 { 
     var cpassword = document.getElementById("cpassword").value;
-    var password = document.getElementsByName("password").value;
+    var password = document.getElementById("password").value;
 
 
     if(cpassword=="")
