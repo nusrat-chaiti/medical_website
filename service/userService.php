@@ -9,9 +9,13 @@
 		}
 		else{
 
-		$sql = "select * from customer where username = '$uname'";
-		$result = $conn->query($sql);
-		$row = $result->fetch_assoc();
+		$sql = "SELECT * FROM  doctor WHERE uname = '{$uname}'";
+		// $query= mysql_query($sql) or die(mysql_error());
+			// $result = $conn->query($sql);
+			// $row = $result->fetch_assoc();
+			$result = mysqli_query($conn, $sql);
+		    $row = mysqli_fetch_assoc($result);
+		
 		return $row;
 		}
 	}
@@ -23,7 +27,7 @@
 			echo "DB connection error";
 		}
 
-		$sql = "select * from interns where User_Name = {$userName}";
+		$sql = "select * from interns where User_Name = '{$userName}'";
 		$result = mysqli_query($conn, $sql);
 		
 

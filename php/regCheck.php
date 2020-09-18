@@ -23,8 +23,15 @@
             $user_type = $_POST['user_type'];
             $gender=$_POST['gender'];
 
+            $_SESSION['uname'] = $uname;
+            $_SESSION['name'] = $name;
+            $_SESSION['email'] = $email;
+           
+
+
             ///////////
             $user = [
+              'name'=> $name,
               'uname'=> $uname,
               'password'=> $password,
               'email'=> $email,
@@ -59,9 +66,11 @@
               // $data =mysqli_fetch_assoc($result);
                
               //if($data['user_type']=='Doctor')
-              if($user['user_type']=$user_type)
+              if($user['user_type']==$user_type)
               {
-              $sql2 = "insert into doctor values ('{$user['name']}','{$user['uname']}','{$user['email']}' ,'x', 'Y', 'Z','A','B','C')";
+              // $sql2 = "insert into doctor values ('{$user['name']}','{$user['uname']}','{$user['email']}','x','Y','Z','A','B','C')";
+              $sql2 = "INSERT INTO doctor (uname, email, d_specialist, d_degree, d_workplace, d_about, profile_pic) VALUES ('$uname','$email','Y','Z','A','B','c')";
+
               $result2=mysqli_query($conn, $sql2);
               // $data2 =mysqli_fetch_assoc($result2);
 

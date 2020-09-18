@@ -1,8 +1,9 @@
 <?php 
-session_start();
-// require_once('../php/session_header.php');
+// session_start();
+require_once('../php/session_header.php');
 
 require_once('../service/userService.php');
+
 
 ?>
 
@@ -23,10 +24,13 @@ require_once('../service/userService.php');
 
           </b>
           <?php
-           echo $_COOKIE['uname']; 
-        // $uname=$_COOKIE['uname'];
-        // $doctors=getByID($uname);
-        // echo $doctors['l_uname'];
+           echo $_COOKIE['uname'];
+          
+          
+          
+        $uname=$_SESSION['uname'];
+        $doctors = getByID($uname);
+        // echo $doctors['uname'];
           ?>
         </p><br>
           <p><b>EMAIL:</b><?php  ?></p>

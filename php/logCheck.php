@@ -39,6 +39,8 @@ if(isset($_POST['submit']))
             $sql = "SELECT * FROM customer WHERE username = '".$uname."' AND password ='".$password."'";
             $result = mysqli_query($conn,$sql);
             $data =mysqli_fetch_assoc($result);
+            $_SESSION['uname'] = $uname;
+
 
             if(count($data)>0)
             {
@@ -52,7 +54,10 @@ if(isset($_POST['submit']))
                   setcookie('gender',$_POST['gender'], time()+48900000, '/');
                   setcookie('dob', $_POST['dob'], time()+48900000, '/');
                   setcookie('status',"OK",time()+48900000,'/'); 
-                  
+                  $_SESSION['uname']=$user['uname'];
+                $_SESSION['password']=$user['password'];
+                $_SESSION['user_type']=$user['user_type'];
+
                   
                   
                  
@@ -107,7 +112,7 @@ if(isset($_POST['submit']))
 
             }
 
-            $_SESSION['l_uname'] = $username;
+            // $_SESSION['uname'] = $username;
 
 
         }
