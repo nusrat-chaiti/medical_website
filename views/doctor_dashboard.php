@@ -13,12 +13,12 @@
           <div class="dash_text">
           <h2><b><i>WELCOME TO YOUR ACCOUNT!! <?php echo $_COOKIE['uname']; ?> </i></b></h2><br><br>
           <h1>you can get started by seeing your patients and can see your appointments.</h1>
+          <div class="cp"><p><i>copyright@ONLINE_DOCTOR(Nusrat Alam Chaiti)</i></p></div>
+
         </div>
-        <footer>
-      <div class="footer">
-       <p><i>copyright@ONLINE_DOCTOR(Nusrat Alam Chaiti)</i></p>
-      </div>
-       </footer>
+        
+ 
+      
 </div> 
 
       

@@ -21,8 +21,8 @@ session_start();
 if(isset($_POST['submit']))
     {
 
-        $uname 		= $_POST['uname'];
-        $password 	= $_POST['password'];
+        $uname 		= $_POST['l_uname'];
+        $password 	= $_POST['l_password'];
 
         if(empty($uname) || empty($password)){
 
@@ -95,6 +95,8 @@ if(isset($_POST['submit']))
                 echo "no data found";
 
             }
+
+            $_SESSION['l_uname'] = $username;
 
 
         }

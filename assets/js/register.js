@@ -229,7 +229,7 @@ function premover()
 function cpempty()
 { 
     var cpassword = document.getElementById("cpassword").value;
-    var password = document.getElementById("password").value;
+    var password = document.getElementsByName("password").value;
 
 
     if(cpassword=="")
@@ -352,6 +352,69 @@ function utempty()
     }
 }
  
+///////////////////////////////////////login validation///////////////////////////
+
+
+function l_unempty()
+{
+   var uname = document.getElementById("l_uname").value;
+   var ulength =uname.length;
+   
+   if(uname == "")
+   {  
+       document.getElementById("l_uname_Msg").innerHTML="user name field can't be empty";
+       
+   }
+
+   else if( (uname>='A' && uname<='Z' || uname>='a'&& uname<='z') && ulength< 2)
+   {   
+        document.getElementById("l_uname_Msg").innerHTML=" Name length can't be less then 2";  
+       
+   }
+   
+   
+   
+
+   else if( uname>='A' && uname<='Z' || uname>='a'&& uname<='z')
+   {
+       Validate();
+       
+   } 
+
+   
+}
+ 
+function l_unremover()
+{
+   document.getElementById('l_uname_Msg').innerHTML = "";
+   
+}
+
+////////////////////////////password for login/////////////////
+
+function l_pempty()
+{ 
+    var password = document.getElementById("l_password").value;
+
+    if(password=="")
+    {
+        document.getElementById("l_pass_Msg").innerHTML="password field can't be empty";
+
+    }
+
+    else
+    {
+         return true;
+       
+    }
+}
+
+function l_premover()
+{
+    document.getElementById("l_pass_Msg").innerHTML="";
+}
+
+
 
 
 function Validate()
@@ -361,6 +424,9 @@ function Validate()
     
     
 }
+
+
+
 
 // function f1()
 // {

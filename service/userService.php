@@ -1,7 +1,7 @@
 <?php
 	require_once('../db/dbf.php');
 
-	function getByID($userName){
+	function getByID($uname){
 		$conn = dbConnection();
 
 		if(!$conn){
@@ -9,7 +9,7 @@
 		}
 		else{
 
-		$sql = "select * from interns where User_Name = '$userName'";
+		$sql = "select * from customer where username = '$uname'";
 		$result = $conn->query($sql);
 		$row = $result->fetch_assoc();
 		return $row;

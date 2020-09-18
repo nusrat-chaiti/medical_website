@@ -376,7 +376,7 @@ span{
 .dash_text
 {
   width: 400px;
-  height: 540px;
+  height: 530px;
   top: 60px;
   position: relative;
   margin: 10% auto;
@@ -386,11 +386,11 @@ span{
 
 
 }
-.footer
+.cp
 {
-  width: 400px;
-  height: 25px;
-  bottom: 40px;
+  /* width: 400px; */
+  /* height: 25px; */
+  bottom: -190px;
   background-position: center;
   position: relative;
   margin: 5% auto;

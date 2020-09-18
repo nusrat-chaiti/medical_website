@@ -28,8 +28,8 @@
 
 
             <form id="login" class="input-group" action = "../php/logCheck.php" onsubmit="return validate()"  method = "POST">
-                <input type="text" id="uname" name="uname" class="input-field" placeholder="Username" onkeyup="unremover()" onblur="unempty()"  required> <b><i id="uname_Msg"></i></b><br>
-                <input type="password" id="password" name="password" class="input-field" placeholder="password"  onkeyup="premover()" onblur="pempty()" required> <b><i id="pass_Msg"></i></b><br>
+                <input type="text" id="l_uname" name="l_uname" class="input-field" placeholder="Username" onkeyup="l_unremover()" onblur="l_unempty()"  required> <b><i id="l_uname_Msg"></i></b><br>
+                <input type="password" id="l_password" name="l_password" class="input-field" placeholder="password"  onkeyup="l_premover()" onblur="l_pempty()" required> <b><i id="l_pass_Msg"></i></b><br>
                 <input type="checkbox" name="rememberme" class="check-box"><span>Remember me</span>
                 <button type="submit" name="submit" class="submit-btn">Log In</button>
 
@@ -44,7 +44,7 @@
                 <input type="email" name="email" id="email" class="input-field" placeholder="Email" onkeyup="eremover()" onblur="eempty()" onmouseout="eempty()" required > <b><i id="email_Msg"></i></b><br>
                 <input type="text" name="uname" id="uname" class="input-field" placeholder="Username" onkeyup="unremover()" onblur="unempty()" required> <b><i id="uname_Msg"></i></b><br>
                  
-                <input type="password" id="password" name="password" id="password" class="input-field" placeholder="Password" onkeyup="premover()" onblur="pempty()" required> <b><i id="pass_Msg"></i></b><br>
+                <input type="password"  name="password" id="password" class="input-field" placeholder="Password" onkeyup="premover()" onblur="pempty()" required> <b><i id="pass_Msg"></i></b><br>
                 <input type="password"id="cpassword" name="cpassword" class="input-field" placeholder="Confirm Password" onkeyup="cpremover()" onblur="cpempty()" required> <b><i id="cpass_Msg"></i></b><br>
 
                 <input type="radio" name="gender" class="radio" value="male" id="r_male" onclick="gremover()"  onmouseout="gempty()" ><span id ="male">male</span>
