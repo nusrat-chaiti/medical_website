@@ -39,7 +39,10 @@
               
 
                 $sql = "INSERT INTO customer (name, email, username, password, gender, dob, user_type) VALUES ('$name','$email','$uname','$password','$gender','$date','$user_type')";
-                if(mysqli_query($conn, $sql))
+                $result=mysqli_query($conn, $sql);
+
+                // if(mysqli_query($conn, $sql))
+                if($result)
              {
                
                 header('location:login.php');   //need to do php
@@ -50,9 +53,29 @@
 
                 echo "inset is not successful, please try again...";
              }
-             if($user_type =='doctor')
-             {
+             //////////////////////////////////////////////////////////
+             
+              // $result=mysqli_query($conn, $sql);
+              // $data =mysqli_fetch_assoc($result);
+               
+              //if($data['user_type']=='Doctor')
+              if($user['user_type']=$user_type)
+              {
               $sql2 = "insert into doctor values ('{$user['name']}','{$user['uname']}','{$user['email']}' ,'x', 'Y', 'Z','A','B','C')";
+              $result2=mysqli_query($conn, $sql2);
+              // $data2 =mysqli_fetch_assoc($result2);
+
+              if($result2)
+              {
+                
+                 header('location:login.php');   
+                 echo "Insert successfull";
+                
+              }
+              else{
+ 
+                 echo "inset is not successful, please try again...";
+              }
 
              }
 
@@ -65,7 +88,7 @@
 
 				//echo"successful";
 				header('location:../views/login.php');
-            }
+        }
 
             //checking name validation
 
