@@ -28,8 +28,8 @@
 
 
             <form id="login" class="input-group" action = "../php/logCheck.php" onsubmit="return validate()"  method = "POST">
-                <input type="text" id="l_uname" name="l_uname" class="input-field" placeholder="Username" onkeyup="l_unremover()" onblur="l_unempty()"  required> <b><i id="l_uname_Msg"></i></b><br>
-                <input type="password" id="l_password" name="l_password" class="input-field" placeholder="password"  onkeyup="l_premover()" onblur="l_pempty()" required> <b><i id="l_pass_Msg"></i></b><br>
+                <input type="text" id="l_uname" name="uname" class="input-field" placeholder="Username" onkeyup="l_unremover()" onblur="l_unempty()"  required> <b><i id="l_uname_Msg"></i></b><br>
+                <input type="password" id="l_password" name="password" class="input-field" placeholder="password"  onkeyup="l_premover()" onblur="l_pempty()" required> <b><i id="l_pass_Msg"></i></b><br>
                 <input type="checkbox" name="rememberme" class="check-box"><span>Remember me</span>
                 <button type="submit" name="submit" class="submit-btn">Log In</button>
 

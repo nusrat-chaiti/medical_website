@@ -21,8 +21,8 @@ session_start();
 if(isset($_POST['submit']))
     {
 
-        $uname 		= $_POST['l_uname'];
-        $password 	= $_POST['l_password'];
+        $uname 		= $_POST['uname'];
+        $password 	= $_POST['password'];
 
         if(empty($uname) || empty($password)){
 
@@ -31,6 +31,11 @@ if(isset($_POST['submit']))
         }
         else
         {
+            $user = [
+				'uname'=>$uname,
+				'password'=>$password,
+            ];
+            
             $sql = "SELECT * FROM customer WHERE username = '".$uname."' AND password ='".$password."'";
             $result = mysqli_query($conn,$sql);
             $data =mysqli_fetch_assoc($result);
@@ -66,7 +71,13 @@ if(isset($_POST['submit']))
                 setcookie('email',  $_POST['email'], time()+3600, '/');
                 setcookie('gender', $_POST['gender'], time()+3600, '/');
 
-                setcookie('dob', $_POST['dob'], time()+3600, '/');               
+                setcookie('dob', $_POST['dob'], time()+3600, '/'); 
+
+                $_SESSION['uname']=$user['uname'];
+                $_SESSION['password']=$user['password'];
+                $_SESSION['user_type']=$user['user_type'];
+
+
                 header('location: ../views/doctor_dashboard.php');
 
                
