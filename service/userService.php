@@ -50,24 +50,43 @@
 		mysqli_close($conn);
 	}
 
-	function getAllUser($userName){
+	// function getAllUser($userName){
+	// 	$conn = dbConnection();
+
+	// 	if(!$conn){
+	// 		echo "DB connection error";
+	// 	}
+
+	// 	$sql = "select * from interns where User_Name = '{$userName}'";
+	// 	$result = mysqli_query($conn, $sql);
+		
+
+	// 	//$row = mysqli_fetch_assoc($result);
+	// 	//echo $row
+	// 	;
+		
+		
+	// 	return $row;
+	// }
+
+	function getAllUser(){
 		$conn = dbConnection();
 
 		if(!$conn){
 			echo "DB connection error";
 		}
 
-		$sql = "select * from interns where User_Name = '{$userName}'";
+		$sql = "select * from patient";
 		$result = mysqli_query($conn, $sql);
-		
+		$users = [];
 
-		//$row = mysqli_fetch_assoc($result);
-		//echo $row
-		;
-		
-		
-		return $row;
+		while($row = mysqli_fetch_assoc($result)){
+			array_push($users, $row);
+		}
+
+		return $users;
 	}
+
 
 
 function validate($info){

@@ -29,7 +29,7 @@
                <ul>
                   <li><a href="#">home</a></li>
 
-                   <li><a href="all_patients.php">patient</a></li>
+                   <li><a href="all_patient.php">patient</a></li>
                    <li><a href="#">appointment</a></li>
                    <li><a href="profile.php">My profile</a></li>
                    <li><a href="editprofile.php">edit profile</a></li>
