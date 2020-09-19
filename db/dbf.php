@@ -1,11 +1,9 @@
 <?php
 
-
-$host='127.0.0.1';
-$uname='root';
-$password='';
-$name='online_doctor';
-
+$host="localhost";
+$d_uname="root";
+$d_password="";
+$d_name="online_doctor";
 
 function dbConnection()
 {
@@ -14,7 +12,7 @@ function dbConnection()
 	global $d_password;
 	global $d_name;
 
-	return mysqli_connect($host,$d_uname, '', $d_name);
+	return mysqli_connect($host,$d_uname, $d_password, $d_name);
 }
 
 

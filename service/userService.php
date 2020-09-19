@@ -1,23 +1,53 @@
 <?php
-	require_once('../db/dbf.php');
+	require_once("../db/dbf.php");
 
-	function getByID($uname){
+	// function getByID($uname){
+	// 	$conn = dbConnection();
+
+	// 	if(!$conn){
+	// 		echo "DB connection error";
+	// 	}
+	// 	else{
+
+	// 	$sql = "SELECT * FROM  doctor WHERE uname = '{$uname}'";
+	// 	// $sql = "select uname from doctor where uname like '%{$uname}%'";
+
+	// 	// $query= mysql_query($sql) or die(mysql_error());
+	// 		// $result = $conn->query($sql);
+	// 		// $row = $result->fetch_assoc();
+	// 		$result = mysqli_query($conn, $sql);
+	// 	    $row = mysqli_fetch_assoc($result);
+	// 		mysqli_close($conn);
+	// 	return $row;
+	// 	}
+	// }
+
+	function getByID($id){
 		$conn = dbConnection();
 
 		if(!$conn){
 			echo "DB connection error";
 		}
-		else{
 
-		$sql = "SELECT * FROM  doctor WHERE uname = '{$uname}'";
-		// $query= mysql_query($sql) or die(mysql_error());
-			// $result = $conn->query($sql);
-			// $row = $result->fetch_assoc();
-			$result = mysqli_query($conn, $sql);
-		    $row = mysqli_fetch_assoc($result);
-		
+	  $sql = "SELECT * FROM customer WHERE user_id='{$id}'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
 		return $row;
+		mysqli_close($conn);
+	}
+	
+	function getByID_D($id){
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
 		}
+
+	  $sql = "SELECT * FROM doctor WHERE d_id='{$id}'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		return $row;
+		mysqli_close($conn);
 	}
 
 	function getAllUser($userName){
@@ -40,22 +70,24 @@
 	}
 
 
-	function validate($user){
-		$conn = dbConnection();
+function validate($info){
+	$conn = dbConnection();
 
-		if(!$conn){
+	if(!$conn){
 			echo "DB connection error";
 		}
 
-		$sql = "select * from interns where User_Name='{$user['userName']}' and Password='{$user['password']}'";
-		$result = mysqli_query($conn, $sql);
-		$user = mysqli_fetch_assoc($result);
+	$sql="SELECT * FROM `customer` WHERE  username='{$info['uname']}' AND upassword='{$info['upassword']}'";
+	$result = mysqli_query($conn, $sql);
+	$row=mysqli_fetch_assoc($result );
 
-		if(count($user) > 0 ){
-			return true;
-		}else{
+	if(count($row)>0 ){
+			return $row;
+		}
+		else{
 			return false;
 		}
+		//mysqli_close($conn);
 	}
 
 
@@ -72,6 +104,7 @@
 		}else{
 			return false;
 		}
+		mysqli_close($conn);
 	}
 
 
@@ -81,7 +114,7 @@
 			echo "DB connection error";
 		}
 
-		$sql = "update users set username='{$user['username']}', password='{$user['password']}', email='{$user['email']}' where id={$user['id']}";
+		$sql = "update users set username='{$user['username']}', upassword='{$user['password']}', email='{$user['email']}' where id={$user['id']}";
 
 		if(mysqli_query($conn, $sql)){
 			return true;

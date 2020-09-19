@@ -45,7 +45,7 @@
                   
               
 
-                $sql = "INSERT INTO customer (name, email, username, password, gender, dob, user_type) VALUES ('$name','$email','$uname','$password','$gender','$date','$user_type')";
+                $sql = "INSERT INTO customer (name, email, username, upassword, gender, dob, user_type) VALUES ('$name','$email','$uname','$password','$gender','$date','$user_type')";
                 $result=mysqli_query($conn, $sql);
 
                 // if(mysqli_query($conn, $sql))

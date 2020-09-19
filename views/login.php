@@ -1,3 +1,7 @@
+
+<?php
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,9 +29,9 @@
             </div>
                 
             <!--/////////////////////////////// login ////////////////////////-->
+            <!-- onsubmit="return validate()" -->
 
-
-            <form id="login" class="input-group" action = "../php/logCheck.php" onsubmit="return validate()"  method = "POST">
+            <form id="login" class="input-group" action = "../php/logCheck.php"  method = "POST">
                 <input type="text" id="l_uname" name="uname" class="input-field" placeholder="Username" onkeyup="l_unremover()" onblur="l_unempty()"  required> <b><i id="l_uname_Msg"></i></b><br>
                 <input type="password" id="l_password" name="password" class="input-field" placeholder="password"  onkeyup="l_premover()" onblur="l_pempty()" required> <b><i id="l_pass_Msg"></i></b><br>
                 <input type="checkbox" name="rememberme" class="check-box"><span>Remember me</span>

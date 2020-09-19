@@ -1,29 +1,21 @@
-
 <?php
 
-
 session_start();
+require_once("../service/userService.php");
 
-if (isset($_COOKIE['rememberme']))
-{
+// if (isset($_COOKIE['rememberme']))
+// {
 
-    echo $_COOKIE['uname'];
-    echo $_COOKIE['password'];
-}
+//     echo $_COOKIE['uname'];
+//     echo $_COOKIE['password'];
+// }
 
-
-?>
-
-<?php
-
-include_once '../db/db.php';
-session_start();
 if(isset($_POST['submit']))
     {
+        $uname = $_POST['uname'];
+        $password = $_POST['password'];
 
-        $uname 		= $_POST['uname'];
-        $password 	= $_POST['password'];
-
+       // echo $password ;
         if(empty($uname) || empty($password)){
 
             echo "null submission";
@@ -31,79 +23,88 @@ if(isset($_POST['submit']))
         }
         else
         {
-            $user = [
+            $users = [
 				'uname'=>$uname,
-				'password'=>$password,
+				'upassword'=>$password
             ];
-            
-            $sql = "SELECT * FROM customer WHERE username = '".$uname."' AND password ='".$password."'";
-            $result = mysqli_query($conn,$sql);
-            $data =mysqli_fetch_assoc($result);
-            $_SESSION['uname'] = $uname;
 
+            $data=validate($users);
 
-            if(count($data)>0)
+            if($data>0)
             {
-                if(isset($_POST['rememberme']))
+                     
+                $_SESSION['uname'] = $data['username'];
+                $_SESSION['name']=$data['name'];
+                $_SESSION['user_id']=$data['user_id'];
+                $_SESSION['user_type']=$data['user_type'];
+
+              //  echo "id:".$data['user_id'];
+
+                //echo "login successful";
+
+                if($data['user_type']=='Doctor')
                 {
-                  setcookie('rememberme',$_POST['rememberme'], time()+367480000, '/');
-                  setcookie('uname', $uname, time()+48900000, '/');
-                  setcookie('password', $password, time()+48900000, '/');
-                  setcookie('name',$_POST['name'] , time()+48900000, '/');
-                  setcookie('email', $_POST['email'], time()+48900000, '/');
-                  setcookie('gender',$_POST['gender'], time()+48900000, '/');
-                  setcookie('dob', $_POST['dob'], time()+48900000, '/');
-                  setcookie('status',"OK",time()+48900000,'/'); 
-                  $_SESSION['uname']=$user['uname'];
-                $_SESSION['password']=$user['password'];
-                $_SESSION['user_type']=$user['user_type'];
+                    header("location:../views/doctor_dashboard.php?doctorId={$_SESSION['user_id']}");
+                }
+                else if($data['user_type']=='Customer')
+                {
+                 header('location: ../views/customer_dashboard.html');
+ 
+ 
+                }
+                else if($data['user_type']=='Intern')
+                {
+                 header('location: ../views/intern_dashboard.html');
+ 
+                
+                }
+ 
+            //     if(isset($_POST['rememberme']))
+            //     {
+            //       setcookie('rememberme',$_POST['rememberme'], time()+367480000, '/');
+            //       setcookie('uname', $uname, time()+48900000, '/');
+            //       setcookie('password', $password, time()+48900000, '/');
+            //       setcookie('name',$_POST['name'] , time()+48900000, '/');
+            //       setcookie('email', $_POST['email'], time()+48900000, '/');
+            //       setcookie('gender',$_POST['gender'], time()+48900000, '/');
+            //       setcookie('dob', $_POST['dob'], time()+48900000, '/');
+            //       setcookie('status',"OK",time()+48900000,'/'); 
+            //       $_SESSION['uname']=$user['uname'];
+            //     $_SESSION['password']=$user['password'];
+            //     $_SESSION['user_type']=$user['user_type'];
 
                   
                   
                  
-                  header('location: ../views/doctor_dashboard.php');
+            //       header('location: ../views/doctor_dashboard.php');
                 
                  
-               }
-               else
-               {
+            //    }
+            //    else
+            //    {
 
-                setcookie('rememberme',$_POST['rememberme'], time()-3600, '/');
+            //     // setcookie('rememberme',$_POST['rememberme'], time()-3600, '/');
                 
-                setcookie('uname', $uname, time()+3600, '/');
-                setcookie('password', $password, time()+3600, '/');
-                setcookie('name', $_POST['name'], time()+3600, '/');
-                setcookie('email',  $_POST['email'], time()+3600, '/');
-                setcookie('gender', $_POST['gender'], time()+3600, '/');
+            //     // setcookie('uname', $uname, time()+3600, '/');
+            //     // setcookie('password', $password, time()+3600, '/');
+            //     // setcookie('name', $_POST['name'], time()+3600, '/');
+            //     // setcookie('email',  $_POST['email'], time()+3600, '/');
+            //     // setcookie('gender', $_POST['gender'], time()+3600, '/');
 
-                setcookie('dob', $_POST['dob'], time()+3600, '/'); 
+            //     // setcookie('dob', $_POST['dob'], time()+3600, '/'); 
 
-                $_SESSION['uname']=$user['uname'];
-                $_SESSION['password']=$user['password'];
-                $_SESSION['user_type']=$user['user_type'];
+                   
 
-
-                header('location: ../views/doctor_dashboard.php');
-
-               
-               }
-               if($data['user_type']=='Doctor')
-               {
-                   header('location: ../views/doctor_dashboard.php');
-               }
-               else if($data['user_type']=='Customer')
-               {
-                header('location: ../views/customer_dashboard.html');
+            //     // $_SESSION['uname']=$user['uname'];
+            //     // $_SESSION['password']=$user['password'];
+            //     // $_SESSION['user_type']=$user['user_type'];
 
 
-               }
-               else if($data['user_type']=='Intern')
-               {
-                header('location: ../views/intern_dashboard.html');
+            //    // header('location: ../views/doctor_dashboard.php?doct $_SESSION['user_id']');
 
                
-               }
-
+            //    }
+              
 
             }
             else
@@ -116,7 +117,7 @@ if(isset($_POST['submit']))
 
 
         }
-        mysqli_close($conn);
+      
 
     }
     else{
