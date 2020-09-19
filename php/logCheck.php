@@ -48,7 +48,7 @@ if(isset($_POST['submit']))
                 }
                 else if($data['user_type']=='Customer')
                 {
-                 header('location: ../views/customer_dashboard.html');
+                 header('location: ../views/customer_dashboard.php');
  
  
                 }
