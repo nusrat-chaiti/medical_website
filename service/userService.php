@@ -36,6 +36,20 @@
 		mysqli_close($conn);
 	}
 	
+	function getByID_P($id){
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+	  $sql = "SELECT * FROM patient WHERE p_id='{$id}'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		return $row;
+		mysqli_close($conn);
+	}
+	
 	function getByID_D($id){
 		$conn = dbConnection();
 

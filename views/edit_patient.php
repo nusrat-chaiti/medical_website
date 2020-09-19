@@ -6,6 +6,11 @@ require_once('../php/session_header.php');
 require_once('../service/userService.php');
 $doctorId=$_SESSION['user_id'];
 
+if (isset($_GET['p_id'])) {
+    $user = getByID_P($_GET['p_id']);	
+}else{
+    header('location: all_patient.php');
+}
 
 ?>
 

@@ -49,7 +49,7 @@ $doctorId=$_SESSION['user_id'];
                     <td><?=$users[$i]['p_disease']?></td>
                     <td><?=$users[$i]['p_disease_his']?></td>
                     <td>
-                        <a href="patient_edit.php?id=<?=$users[$i]['user_id']?> "><h3 style="color:white">edit disease history</h3></a> 
+                        <a href="patient_edit.php?id=<?=$users[$i]['p_id']?> "><h3 style="color:white">edit disease history</h3></a> 
                         <!-- <a href="delete.php?id=<?=$users[$i]['user_id']?>">Delete</a>  -->
                         <!-- <a href="delete.php?id=<?=$users[$i]['user_id']?>">Delete</a>  -->
 
