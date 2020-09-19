@@ -107,14 +107,30 @@ function validate($info){
 		mysqli_close($conn);
 	}
 
-
+/////////////////doc basic info updated//////////////////
 	function update($user){
 		$conn = dbConnection();
 		if(!$conn){
 			echo "DB connection error";
 		}
 
-		$sql = "update users set username='{$user['username']}', upassword='{$user['password']}', email='{$user['email']}' where id={$user['id']}";
+		$sql = "update customer set name='{$user['name']}', upassword='{$user['upassword']}', email='{$user['email']}' where user_id={$user['user_id']}";
+
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	///////////////doc other info updated////////////////
+	function update_d($user)
+	{
+		$conn = dbConnection();
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "update doctor set d_degree='{$user['d_degree']}', d_workplace='{$user['d_workplace']}',d_about='{$user['d_about']}' where d_id={$user['d_id']}";
 
 		if(mysqli_query($conn, $sql)){
 			return true;
@@ -123,7 +139,7 @@ function validate($info){
 		}
 	}
 
-
+////////////////////////////////////////////////////
 
 	function checkEmail($email)
 	{

@@ -43,10 +43,12 @@ $doctorId=$_SESSION['user_id'];
         ?>
           <div class="dash_text">
           <p><b>NAME:<?= $doctorInfo ['name']?></b></p><br>
-          <p><b>EMAIL:<?= $doctorInfo ['email']?></b><?php  ?></p>
+          <p><b>EMAIL:<?= $doctorInfo ['email']?></b><?php  ?></p><br>
 
-                <p><b>DEGREE:</b><?= $doctorInfo2 ['d_degree']?></p>
-                <p><b>WORK PLACE:</b><?= $doctorInfo2 ['d_workplace']?></p>
+                <p><b>DEGREE:</b><?= $doctorInfo2 ['d_degree']?></p><br>
+                <p><b>DEGREE:</b><?= $doctorInfo2 ['d_specialist']?></p><br>
+
+                <p><b>WORK PLACE:</b><?= $doctorInfo2 ['d_workplace']?></p><br>
                 <p><b>ABOUT:</b><?= $doctorInfo2 ['d_about']?></p>
                 <!-- <div class="cp"><p><i>copyright@ONLINE_DOCTOR(Nusrat Alam Chaiti)</i></p></div> -->
 

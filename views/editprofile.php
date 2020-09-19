@@ -28,39 +28,58 @@ $doctorId=$_SESSION['user_id'];
    
           <div class="dash_text">
 
-          <form action="../php/userController.php" method="post">
+          <form action="../php/userController.php" method="POST">
 		<fieldset>
 			<legend align="center"><b>Edit profile<b></legend>
 			<table>
 				<tr>
 					<td>Username</td>
-					<td><input type="text" name="username" value="<?=$doctorInfo ['name']?>"></td>
+					<td><input type="text" name="name" value="<?=$doctorInfo ['name']?>"></td>
 				</tr>
 				<tr>
 					<td>Password</td>
-					<td><input type="password" name="password" value="<?=$doctorInfo ['upassword']?>"></td>
+					<td><input type="password" name="upassword" value="<?=$doctorInfo ['upassword']?>"></td>
 				</tr>
 				<tr>
 					<td>Email</td>
 					<td><input type="text" name="email" value="<?=$doctorInfo ['email']?>"></td>
 				</tr>
+               
+				<tr>
+					<td></td>
+					<td>
+						<input type="hidden" name="user_id" value="<?=$doctorInfo['user_id']?>">
+						<input type="submit" name="edit" value="Update"> 
+						<!-- <a href="all_users.php">Back</a> -->
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+
+
+    <form action="../php/userController.php" method="POST">
+		<fieldset>
+			<legend align="center"><b>Edit profile info<b></legend>
+			<table>
+				
                 <tr>
 					<td>Degree</td>
-					<td><input type="text" name="degree" value="<?=$doctorInfo2 ['d_degree']?>"></td>
+					<td><input type="text" name="d_degree" value="<?=$doctorInfo2 ['d_degree']?>"></td>
 				</tr>
                 <tr>
 					<td>Workplace</td>
-					<td><input type="text" name="workplace" value="<?=$doctorInfo2 ['d_workplace']?>"></td>
+					<td><input type="text" name="d_workplace" value="<?=$doctorInfo2 ['d_workplace']?>"></td>
 				</tr>
                 <tr>
-					<td>About/Experience</td>
+					<td>About</td>
 					<td><input type="text" name="d_about" value="<?=$doctorInfo2 ['d_about']?>"></td>
 				</tr>
 				<tr>
 					<td></td>
 					<td>
-						<input type="hidden" name="id" value="<?=$doctorInfo['d_id']?>">
-						<input type="submit" name="edit" value="Update"> 
+						<input type="hidden" name="d_id" value="<?=$doctorInfo2 ['d_id']?>">
+						<input type="submit" name="edit_d" value="Update"> 
 						<!-- <a href="all_users.php">Back</a> -->
 					</td>
 				</tr>
