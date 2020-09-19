@@ -49,7 +49,9 @@ $doctorId=$_SESSION['user_id'];
                     <td><?=$users[$i]['p_disease']?></td>
                     <td><?=$users[$i]['p_disease_his']?></td>
                     <td>
-                        <a href="patient_edit.php?id=<?=$users[$i]['p_id']?> "><h3 style="color:white">edit disease history</h3></a> 
+                    <!-- <input type="hidden" name="d_id" value="<?=$users[$i]['p_id']?>"> -->
+
+                        <a href="edit_patient.php?id=<?=$users[$i]['p_id']?> "><h3 style="color:white">edit disease history</h3></a> 
                         <!-- <a href="delete.php?id=<?=$users[$i]['user_id']?>">Delete</a>  -->
                         <!-- <a href="delete.php?id=<?=$users[$i]['user_id']?>">Delete</a>  -->
 
@@ -77,7 +79,7 @@ $doctorId=$_SESSION['user_id'];
                   <li><a href="#">home</a></li>
 
                    <li><a href="all_patients.php">all patient</a></li>
-                   <li><a href="edit_patient.php">edit patient disease history</a></li>
+                   <!-- <li><a href="edit_patient.php">edit patient disease history</a></li> -->
 
                    <li><a href="#">appointment</a></li>
                    <li><a href="profile.php">My profile</a></li>

@@ -1,15 +1,13 @@
 <?php 
-// session_start();
-require_once('../php/session_header.php');
+session_start();
+// require_once('../php/session_header.php');
 // $id= $_SESSION['d_id'];
 
 require_once('../service/userService.php');
-$doctorId=$_SESSION['user_id'];
-
 if (isset($_GET['p_id'])) {
-    $user = getByID_P($_GET['p_id']);	
+    $user = getByID_P($_GET['p_id']);
 }else{
-    header('location: all_patient.php');
+    header('location: all_patient.php?id={$id}');
 }
 
 ?>
@@ -29,6 +27,8 @@ if (isset($_GET['p_id'])) {
 <?php
  $doctorInfo = getByID($doctorId);
  $doctorInfo2 = getByID_D($doctorId);
+//  $patientInfo = getByID_P($id);
+
 ?>
    
           <div class="dash_text">
@@ -38,23 +38,27 @@ if (isset($_GET['p_id'])) {
 			<legend align="center"><b>Edit patient disease history<b></legend>
 			<table>
 				<tr>
-					<td>Username</td>
-					<td><input type="text" name="name" value="<?=$doctorInfo ['name']?>"></td>
+					<td>patient id</td>
+					<td><?=$user['p_id']?>></td>
 				</tr>
 				<tr>
-					<td>Password</td>
-					<td><input type="password" name="upassword" value="<?=$doctorInfo ['upassword']?>"></td>
+					<td>patient name</td>
+					<td><?=$user ['p_name']?>></td>
 				</tr>
 				<tr>
-					<td>Email</td>
-					<td><input type="text" name="email" value="<?=$doctorInfo ['email']?>"></td>
+					<td>patient disease</td>
+					<td><input type="text" name="p_disease" value="<?=$user ['p_disease']?>"></td>
+				</tr>
+                <tr>
+					<td>patient_disease_his</td>
+					<td><input type="text" name="patient_disease_his" value="<?=$user ['p_disease_his']?>"></td>
 				</tr>
                
 				<tr>
 					<td></td>
 					<td>
-						<input type="hidden" name="user_id" value="<?=$doctorInfo['user_id']?>">
-						<input type="submit" name="edit" value="Update"> 
+						<input type="hidden" name="p_id" value="<?=$user['p_id']?>">
+						<input type="submit" name="edit_p" value="Update"> 
 						<!-- <a href="all_users.php">Back</a> -->
 					</td>
 				</tr>
