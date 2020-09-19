@@ -30,7 +30,7 @@ $doctorId=$_SESSION['user_id'];
 
           <form action="../php/userController.php" method="POST">
 		<fieldset>
-			<legend align="center"><b>Edit profile<b></legend>
+			<legend align="center"><b>Edit patient disease history<b></legend>
 			<table>
 				<tr>
 					<td>Username</td>
@@ -58,34 +58,7 @@ $doctorId=$_SESSION['user_id'];
 	</form>
 
 
-    <form action="../php/userController.php" method="POST">
-		<fieldset>
-			<legend align="center"><b>Edit profile info<b></legend>
-			<table>
-				
-                <tr>
-					<td>Degree</td>
-					<td><input type="text" name="d_degree" value="<?=$doctorInfo2 ['d_degree']?>"></td>
-				</tr>
-                <tr>
-					<td>Workplace</td>
-					<td><input type="text" name="d_workplace" value="<?=$doctorInfo2 ['d_workplace']?>"></td>
-				</tr>
-                <tr>
-					<td>About</td>
-					<td><input type="text" name="d_about" value="<?=$doctorInfo2 ['d_about']?>"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>
-						<input type="hidden" name="d_id" value="<?=$doctorInfo2 ['d_id']?>">
-						<input type="submit" name="edit_d" value="Update"> 
-						<!-- <a href="all_users.php">Back</a> -->
-					</td>
-				</tr>
-			</table>
-		</fieldset>
-	</form>
+    
 
         </div>
         
