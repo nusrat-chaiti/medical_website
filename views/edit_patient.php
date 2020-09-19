@@ -1,6 +1,6 @@
 <?php 
-session_start();
-// require_once('../php/session_header.php');
+// session_start();
+require_once('../php/session_header.php');
 // $id= $_SESSION['d_id'];
 
 require_once('../service/userService.php');
