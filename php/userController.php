@@ -1,5 +1,5 @@
 <?php 
-	session_start();
+	// session_start();
 	require_once('../php/session_header.php');
 	require_once('../service/userService.php');
     // $doctorId=$_SESSION['user_id'];
@@ -94,7 +94,28 @@
 			}
 		}
 	}
+////////////////////////pic update//////////////
 
+if(isset($_POST['upload'])){
+
+		
+		$id = $_POST['d_id'];
+		// echo $id;
+
+	    $file =  $_FILES['picture']['name'];
+		$tmp_name =  $_FILES['picture']['tmp_name'];
+        $folder = "../image/".$file;
+		// echo $folder;
+		move_uploaded_file($tmp_name,$folder);
+		// echo "<img src = '$folder' height ='100' ,width = '100'/>";
+		$status = upload($id,$folder);
+		if($status){
+			header('location: ../views/profile.php?success=done');
+		}else{
+			header('location: ../views/editprofile.php?p_id={$p_id}');
+		}
+
+}
 	////////edit patient disease history////////////
 
 	if(isset($_POST['edit_p'])){

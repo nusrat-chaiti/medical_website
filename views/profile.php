@@ -42,6 +42,89 @@ $doctorId=$_SESSION['user_id'];
         
         ?>
           <div class="dash_text">
+
+          
+            
+
+          <?php         
+            
+            // session_start();
+                    //   if (isset($_POST['submit']))
+                    //   {
+                    //   $dir_path="image/";
+                    //   $extension_array =array('jpeg','png','jpg');
+
+                    //   setcookie('picture',$_FILES["picture"]["name"], time()+367480000, '/');
+                    //   setcookie('picture',$_FILES["picture"]["tmp_name"], time()+367480000, '/');
+
+
+
+                    //   if(is_dir($dir_path))
+                    //   {
+
+                    //     $filedir = 'image/'.$_FILES['picture']['name'].'.jpg';
+                    //     //$filedir = 'image/'.time().'.jpg';
+
+
+                    //   if(move_uploaded_file($_FILES['picture']['tmp_name'],$filedir))
+                    //   {
+                    //     echo '<img src="image/'.$_FILES["picture"]["name"].'" style="width:280px;height:210px;"  ><br/>'; 
+                    //     echo " your profile picture uploaded succesfully"; 
+
+                        
+                    //   } 
+                    //   else{
+                    //     echo "file is not uploaded";
+                    //   }
+                    
+                      
+                    //  }
+                    // //  setcookie('name',$_POST['name'], time()+367480000, '/');
+
+                    //  setcookie('status',"OK",time()+48900000,'/'); 
+                    // //  header("location: view_profile.php");
+
+
+                    //   }
+                    //   else if(!isset($_COOKIE['picture']))
+                    //   {
+                    //     setcookie('picture',$_FILES["picture"]["name"], time()+367480000, '/');
+                    //     setcookie('picture',$_FILES["picture"]["tmp_name"], time()+367480000, '/');
+  
+                    //     setcookie('status',"OK",time()+48900000,'/'); 
+
+
+                    //       echo '<img src="image/'.$_FILES["picture"]["name"].'" style="width:280px;height:210px;"  ><br/>'; 
+                    //   }
+                    //   else
+                    //   {
+                          ?>
+                        <!-- <img src="../image/doc-1.jpg" alt=" " style="width:280px;height:210px;" > -->
+                         <?php
+
+                      //}
+                     
+                      
+
+                
+               ?>
+
+               
+
+
+            <p><b>profile picture:
+            <?php 
+               if ($doctorInfo2 ['profile_pic'] == "")
+                {
+                    echo "No data found";
+                }
+                else { ?>
+                    <img src=" <?= $doctorInfo2 ['profile_pic']?>"style="width:280px;height:210px;">
+                
+               
+               <?php } ?>
+            </b></p><br>
+
           <p><b>NAME:<?= $doctorInfo ['name']?></b></p><br>
           <p><b>EMAIL:<?= $doctorInfo ['email']?></b><?php  ?></p><br>
 

@@ -171,6 +171,28 @@ function validate($info){
 			return false;
 		}
 	}
+	 ///////////////////upload picture///////////////////////////
+	 function upload($id,$folder)
+	{
+		
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+		else{
+
+			$sql = "update doctor set profile_pic ='$folder' where d_id='$id' ";
+			if(mysqli_query($conn, $sql)){
+			return true;
+		  }else{
+			return false;
+		  }
+		
+		}
+
+	}
+
 	////////////////////////patient disease history////////////////
 	function update_p($user)
 	{
@@ -250,26 +272,26 @@ function validate($info){
 
 
 	// for uploading image
-	function upload($a,$folder)
-	{
+	// function upload($a,$folder)
+	// {
 		
-		$conn = dbConnection();
+	// 	$conn = dbConnection();
 
-		if(!$conn){
-			echo "DB connection error";
-		}
-		else{
+	// 	if(!$conn){
+	// 		echo "DB connection error";
+	// 	}
+	// 	else{
 
-			$sql = "update interns_info set Picture ='$folder' where User_Name='$a' ";
-			if(mysqli_query($conn, $sql)){
-			return true;
-		  }else{
-			return false;
-		  }
+	// 		$sql = "update interns_info set Picture ='$folder' where User_Name='$a' ";
+	// 		if(mysqli_query($conn, $sql)){
+	// 		return true;
+	// 	  }else{
+	// 		return false;
+	// 	  }
 		
-		}
+	// 	}
 
-	}
+	// }
 	//inserting message
 	function chat($user,$message)
 	{

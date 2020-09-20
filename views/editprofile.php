@@ -28,6 +28,66 @@ $doctorId=$_SESSION['user_id'];
    
           <div class="dash_text">
 
+		  <fieldset>
+                    <legend align="center"><b>PROFILE PICTURE</b></legend>
+                    <form action="../php/userController.php" method="POST" enctype="multipart/form-data">
+                
+                        
+                        <br />
+                        <input name = "picture" type="file">
+                        <hr />
+						<input type="hidden" name="d_id" value="<?=$doctorInfo2 ['d_id']?>">
+
+                        <input type="submit" name ="upload"value="upload" >
+
+
+                        
+                        <?php
+                        // session_start();
+                                //   if (isset($_POST['submit']))
+                                //   {
+                                    
+
+                                    
+                                //   $dir_path="image/";
+                                //   $extension_array =array('jpeg','png','jpg');
+
+                                //   if(is_dir($dir_path))
+                                //   {
+
+                                //     $filedir = 'image/'.$_FILES['picture']['name'].'.jpg';
+                                //     //  $filedir = 'image/'.time()+53789872038338888.'.jpg';
+
+
+                                //   if(move_uploaded_file($_FILES['picture']['tmp_name'],$filedir))
+                                //   {
+                                //     echo '<img src="image/'.$_FILES["picture"]["name"].'" style="width:280px;height:210px;"  ><br/>'; 
+                                //     echo " your profile picture uploaded succesfully"; 
+
+                                    
+                                //   } 
+                                //   else{
+                                //     echo "file is not uploaded";
+                                //   }
+                                
+                                  
+                                //  }
+                                //  setcookie('picture',$filedir, time()+367480000, '/');
+                                //  setcookie('status',"OK",time()+48900000,'/'); 
+                                //  header("location: view_profile.php");
+
+
+                                //   }
+                            ?>
+                                   
+                                       <!-- <p align="center"> <a href="view_profile.php">view profile</a>   </p> -->
+                                    
+
+                    </form>
+                </fieldset>
+
+
+
           <form action="../php/userController.php" method="POST">
 		<fieldset>
 			<legend align="center"><b>Edit profile<b></legend>
