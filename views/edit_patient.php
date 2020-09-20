@@ -1,11 +1,11 @@
 <?php 
 // session_start();
 require_once('../php/session_header.php');
-// $id= $_SESSION['d_id'];
+// $id= $_SESSION['p_id'];
 
 require_once('../service/userService.php');
-if (isset($_GET['p_id'])) {
-    $user = getByID_P($_GET['p_id']);
+if (isset($_GET['id'])) {
+    $user = getByID_P($_GET['id']);
 }else{
     header('location: all_patient.php?id={$id}');
 }
@@ -25,8 +25,8 @@ if (isset($_GET['p_id'])) {
 <body>
 <div class="dash-info">
 <?php
- $doctorInfo = getByID($doctorId);
- $doctorInfo2 = getByID_D($doctorId);
+//  $doctorInfo = getByID($doctorId);
+//  $doctorInfo2 = getByID_D($doctorId);
 //  $patientInfo = getByID_P($id);
 
 ?>
@@ -39,11 +39,11 @@ if (isset($_GET['p_id'])) {
 			<table>
 				<tr>
 					<td>patient id</td>
-					<td><?=$user['p_id']?>></td>
+					<td><?=$user['p_id']?></td>
 				</tr>
 				<tr>
 					<td>patient name</td>
-					<td><?=$user ['p_name']?>></td>
+					<td><?=$user ['p_name']?></td>
 				</tr>
 				<tr>
 					<td>patient disease</td>
