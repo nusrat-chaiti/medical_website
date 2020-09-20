@@ -171,6 +171,22 @@ function validate($info){
 			return false;
 		}
 	}
+	////////////////////////patient disease history////////////////
+	function update_p($user)
+	{
+		$conn = dbConnection();
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "update patient set p_disease='{$user['p_disease']}', p_disease_his='{$user['p_disease_his']}' where p_id={$user['p_id']}";
+
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
 
 ////////////////////////////////////////////////////
 

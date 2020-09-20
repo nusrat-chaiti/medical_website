@@ -94,6 +94,37 @@
 			}
 		}
 	}
+
+	////////edit patient disease history////////////
+
+	if(isset($_POST['edit_p'])){
+
+		
+        $p_disease 		    = $_POST['p_disease'];
+		$p_disease_his 		= $_POST['p_disease_his'];
+        $p_id               =$_POST['p_id'];
+       
+
+		if(empty($p_disease)|| empty($p_disease_his)){
+			header('location: ../views/all_patient.php?p_id={$p_id}');
+		}else{
+
+			$user = [
+				
+                'p_disease'=> $p_disease,
+                'p_disease_his'=> $p_disease_his,
+				'p_id'=> $p_id
+			];
+
+			$status = update_p($user);
+
+			if($status){
+				header('location: ../views/all_patient.php?success=done');
+			}else{
+				header('location: ../views/edit_patient.php?p_id={$p_id}');
+			}
+		}
+	}
 	//delete user
 
 	if(isset($_POST['delete'])){
