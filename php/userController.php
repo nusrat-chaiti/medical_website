@@ -148,32 +148,32 @@ if(isset($_POST['upload'])){
 	}
 	//delete user
 
-	if(isset($_POST['delete'])){
+	if(isset($_POST['delete_p'])){
 
-		$username 	= $_POST['username'];
-		$password 	= $_POST['password'];
-		$email 		= $_POST['email'];
-		$id 		= $_POST['id'];
+			
+        $p_disease 		    = $_POST['p_disease'];
+		$p_disease_his 		= $_POST['p_disease_his'];
+        $p_id               =$_POST['p_id'];
+       
 
-		if(empty($username) || empty($password) || empty($email)){
-			header('location: ../views/edit.php?id={$id}');
+		if(empty($p_disease)|| empty($p_disease_his)){
+			header('location: ../views/all_patient.php?p_id={$p_id}');
 		}
 		else{
 
 			$user = [
-				'username'=> $username,
-				'password'=> $password,
-				'email'=> $email,
-				'id'=> $id
+				'p_disease'=> $p_disease,
+                'p_disease_his'=> $p_disease_his,
+				'p_id'=> $p_id
 			];
 
 			$status = delete($user);
 
 			if($status){
-				header('location: ../views/all_users.php?success=done');
+				header('location: ../views/all_patient.php?success=done');
 			}
 			else{
-				header('location: ../views/edit.php?id={$id}');
+				header('location: ../views/edit_patient.php?id={$id}');
 			}
 		}
 	}

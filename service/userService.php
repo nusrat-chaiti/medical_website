@@ -100,6 +100,25 @@
 
 		return $users;
 	}
+////////////////////////appointment-list////////////////
+		function getAllUser_app()
+		{
+			$conn = dbConnection();
+
+			if(!$conn){
+				echo "DB connection error";
+			}
+
+			$sql = "select * from appointment";
+			$result = mysqli_query($conn, $sql);
+			$users = [];
+
+			while($row = mysqli_fetch_assoc($result)){
+				array_push($users, $row);
+			}
+
+			return $users;
+		}
 
 
 
@@ -335,6 +354,24 @@ function validate($info){
 		}
 
 	}
+	///////////////////delete patient/////////////
+
+	
+	function delete($user){
+		$conn = dbConnection();
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "DELETE FROM `patient` WHERE p_id={$user['p_id']}";
+
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 
 	
 

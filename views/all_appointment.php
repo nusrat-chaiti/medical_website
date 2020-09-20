@@ -24,14 +24,16 @@ $doctorId=$_SESSION['user_id'];
 <?php
  $doctorInfo = getByID($doctorId);
  $doctorInfo2 = getByID_D($doctorId);
+//  echo $doctorInfo2['d_id'];
+
 ?>
    
           <div class="dash_text">
-          <h3>patient list</h3>
+          <h3>Appointment list</h3>
 
             <table border="1">
                 <tr>
-                    <td>P_ID</td>
+                    <td>patient_ID</td>
                     <td>name</td>
 
                     <td>patient_disease</td>
@@ -40,24 +42,28 @@ $doctorId=$_SESSION['user_id'];
                 </tr>
 
                 <?php  
-                    $users = getAllUser();
-                    for ($i=0; $i != count($users); $i++) {  ?>
+                    $users = getAllUser_app();
+                    for ($i=0; $i != count($users); $i++) { ?>
+                            
                 <tr>
-                    <td><?=$users[$i]['p_id']?></td>
+                    
+                    <td><?=$users[$i]['a_id']?></td>
                     <td><?=$users[$i]['p_name']?></td>
 
-                    <td><?=$users[$i]['p_disease']?></td>
-                    <td><?=$users[$i]['p_disease_his']?></td>
+                    <td><?=$users[$i]['a_date']?></td>
+                    <td><?=$users[$i]['a_time']?></td>
                     <td>
                     <!-- <input type="hidden" name="d_id" value="<?=$users[$i]['p_id']?>"> -->
 
-                        <a href="edit_patient.php?id=<?=$users[$i]['p_id']?> "><h3 style="color:white">edit disease history</h3></a> <hr>
-                        <a href="delete_patient.php?id=<?=$users[$i]['p_id']?>"><h3 style="color:pink">delete</h3></a> 
+                        <a href="delete_patient.php?id=<?=$users[$i]['a_id']?>"><h3 style="color:pink">delete</h3></a> 
 
                     </td>
                 </tr>
+                    
 
-                <?php } ?>
+                <?php } 
+                
+                ?>
                 
             </table>
                     
@@ -77,7 +83,7 @@ $doctorId=$_SESSION['user_id'];
                <ul>
                   <li><a href="#">home</a></li>
 
-                   <li><a href="#">all patient</a></li>
+                   <li><a href="all_patients.php">all patient</a></li>
                    <!-- <li><a href="edit_patient.php">edit patient disease history</a></li> -->
 
                    <li><a href="all_appointment.php">all appointments</a></li>
