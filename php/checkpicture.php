@@ -6,7 +6,7 @@ session_start();
 	if(isset($_POST['submit'])){
 		
 		
-		$a =  $_SESSION['userName'];
+		$a =  $_SESSION['username'];
 		
 		
 		$file =  $_FILES['Picture']['name'];
