@@ -7,7 +7,7 @@
 		$password1 = $_POST['password1'];
         $password2 = $_POST['password2'];
         
-        $username =  $_SESSION['username'];
+        $uname =  $_SESSION['uname'];
         if($password1=="" && $password2=="")
         {
             echo"Can not be empty";
@@ -17,7 +17,7 @@
 				'password1'=> $password1,
 				'password2'=> $password2,
 				
-                'username'=> $username
+                'uname'=> $uname
                 
                 
 			];

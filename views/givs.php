@@ -47,7 +47,7 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="eduqua.html"> Add Degree</a>
+                        <a href="eduqua.php"> Add Degree</a>
                     </td>
                 </tr>
                     <tr>
@@ -117,7 +117,7 @@
      
     
        while ($row = mysqli_fetch_assoc($result)) {
-            echo '<h2 style= "color:green">'.$row['User_Name'].'</h2>';
+            echo '<h2 style= "color:green">'.$row['username'].'</h2>';
             echo '<p>'.$row['message'].'</p>';
             echo "<br>";
         }

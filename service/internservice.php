@@ -26,7 +26,7 @@
 		}
 		else{
 
-		$sql = "select * from interns_info where username = '$username'";
+		$sql = "select * from interns_info where username = '$userName'";
 		$result = $conn->query($sql);
 		$row = $result->fetch_assoc();
 		return $row;
@@ -240,7 +240,7 @@ function addfirstaid($user)
 		}
 		else{
 
-			$sql = "update customer_info set First_aid ='{$user['First_Aid']}' where username = '{$user['username']}'";
+			$sql = "update customer_info set First_aid ='{$user['First_Aid']}' where username = '{$user['User_Name']}'";
 			if(mysqli_query($conn, $sql)){
 			return true;
 		  }else{
@@ -259,7 +259,7 @@ function addfirstaid($user)
 			echo "DB connection error";
 		}
 
-		$sql = "update interns_info set Degree='{$user['name']}', Date='{$user['acm']}', Instituition ='{$user['inst']}' where username = '{$user['username']}'";
+		$sql = "update interns_info set Degree='{$user['name']}', Date='{$user['acm']}', Instituition ='{$user['inst']}' where username = '{$user['uname']}'";
 
 		if(mysqli_query($conn, $sql)){
 			return true;
@@ -292,7 +292,7 @@ function addfirstaid($user)
 			echo "DB connection error";
 		}
 
-		$sql = "update customer set upassword ='{$user['password2']}' where username = '{$user['username']}' and upassword = '{$user['password1']}'";
+		$sql = "update customer set upassword ='{$user['password2']}' where username = '{$user['uname']}' and upassword = '{$user['password1']}'";
 
 		if(mysqli_query($conn, $sql)){
 			return true;

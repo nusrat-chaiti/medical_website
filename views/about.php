@@ -46,7 +46,7 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="eduqua.html"> Add Degree</a>
+                        <a href="eduqua.php"> Add Degree</a>
                     </td>
                 </tr>
                     <tr>

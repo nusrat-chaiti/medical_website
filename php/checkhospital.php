@@ -1,5 +1,5 @@
 <?php
-$mysqli = new mysqli("127.0.0.1", "root", "", "web");
+$mysqli = new mysqli("127.0.0.1", "root", "", "online_doctor");
 if($mysqli->connect_error) {
   exit('Could not connect');
 }

@@ -5,7 +5,7 @@
 	if(isset($_POST['submit'])){
 
 		$about = $_POST['about'];
-        $userName=  $_SESSION['userName'];
+        $userName=  $_SESSION['uname'];
 
 			$status = about($userName,$about);
 

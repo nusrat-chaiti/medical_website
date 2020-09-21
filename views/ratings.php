@@ -56,7 +56,7 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="eduqua.html"> Add Degree</a>
+                        <a href="eduqua.php"> Add Degree</a>
                     </td>
                 </tr>
                     <tr>
@@ -114,10 +114,10 @@
                     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/star.svg" class="top-star" />
                     <h1>
                     <?php
-                     $a=  $_SESSION['userName'];
+                     $a=  $_SESSION['uname'];
       
                      $users = getRating($a);
-                     echo $users['User_Name'];
+                     echo $users['username'];
                        ?>
                        Your ratings is :
                        <?php
