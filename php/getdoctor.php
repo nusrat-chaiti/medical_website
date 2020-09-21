@@ -3,7 +3,7 @@
 	$Name = $_POST['Name'];
 
 	$conn = mysqli_connect('localhost', 'root', '', 'online_doctor');
-	$sql= "select * from interns where Name like '%{$Name}%'";
+	$sql= "select * from customer where name like '%{$Name}%'";
 
 	$result = mysqli_query($conn, $sql);
 
@@ -18,11 +18,11 @@
 
 	while ($row = mysqli_fetch_assoc($result)) {
 			$data .= "<tr>
-							<td>{$row['Name']}</td>
-							<td>{$row['Email']}</td>
+							<td>{$row['name']}</td>
+							<td>{$row['email']}</td>
 							
-                            <td>{$row['Gender']}</td>
-                            <td>{$row['User_Type']}</td>
+                            <td>{$row['gender']}</td>
+                            <td>{$row['user_type']}</td>
 					</tr>";
 	}
 
