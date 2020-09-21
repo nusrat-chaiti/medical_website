@@ -7,7 +7,7 @@ require_once('../service/internservice.php');
 		$name = $_POST['name'];
         $inst = $_POST['inst'];
         $acm = $_POST['acm'];
-        $userName =  $_SESSION['userName'];
+        $username =  $_SESSION['username'];
         
 
 	
@@ -15,7 +15,7 @@ require_once('../service/internservice.php');
 				'name'=> $name,
 				'inst'=> $inst,
 				'acm'=> $acm,
-                'userName'=> $userName
+                'username'=> $username
                 
                 
 			];
