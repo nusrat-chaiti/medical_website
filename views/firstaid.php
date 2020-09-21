@@ -36,7 +36,7 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="logout.php"> Logout</a>
+                        <a href="../php/logout.php"> Logout</a>
                     </td>
                 </tr>
                     <tr>
