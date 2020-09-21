@@ -1,5 +1,5 @@
 <?php
-	require_once('../db/db.php');
+	require_once('../db/dbf.php');
 
 	function getByID($userName){
 		$conn = dbConnection();
