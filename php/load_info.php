@@ -1,6 +1,6 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "web");
-$result = mysqli_query($conn, "SELECT * FROM customer");
+$conn = mysqli_connect("localhost", "root", "", "online_doctor");
+$result = mysqli_query($conn, "SELECT * FROM customer_info");
  
 $data = array();
 while ($row = mysqli_fetch_object($result))
