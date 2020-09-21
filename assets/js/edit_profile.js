@@ -211,7 +211,7 @@ function a_remover()
 
 //////////////////////
 function validate() {
-    var x = document.forms["profile_2"]["degree"]["workplace"]["about"].value;
+    var x = document.forms["profile_2"]["d_degree"]["d_workplace"]["d_about"].value;
     
     
     if (x == "") {
