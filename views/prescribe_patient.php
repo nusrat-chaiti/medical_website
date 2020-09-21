@@ -19,6 +19,8 @@ if (isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nova+Round&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="../assets/js/prescription.js"></script>
+
 
     <title>doctor dashboard</title>
 </head>
@@ -35,7 +37,7 @@ if (isset($_GET['id'])) {
 
           
 		<fieldset>
-			<legend align="center"><b>Edit patient disease history<b></legend>
+			<legend align="center"><b>prescription<b></legend>
 			<table>
 				<!-- <tr>
 					<td>patient id:</td>
@@ -63,8 +65,8 @@ if (isset($_GET['id'])) {
 					</td>
 				</tr>
             </table>
-            <form name="myForm"  action="../php/prescription.php" onsubmit="return validateForm()" method="post">
-               <input id='message' type="text" name= "message" placeholder='Type your message'>
+            <form name="myForm"  action="../php/prescription.php" onsubmit="return validate()" method="post">
+               <input id='message' type="text" name= "message" placeholder='Type your message'onkeyup="mess_remover()" onblur="mess_empty()" ><b><i id="pres_Msg"></i></b><br>
                <input type="hidden" name="p_id" value="<?=$user['p_id']?>">
 
                <input type="submit" name="submit" value="prescription"/>
@@ -72,25 +74,25 @@ if (isset($_GET['id'])) {
            </form>
            <div id="">
                 <?php
-                require_once('../db/dbf.php');
+                // require_once('../db/dbf.php');
                 
-                $conn = dbConnection();
+                // $conn = dbConnection();
 
-                    if(!$conn){
-                        echo "DB connection error";
-                    }
-                    else{
+                //     if(!$conn){
+                //         echo "DB connection error";
+                //     }
+                //     else{
 
-                $sql = "select * from prescription";
-                $result = $conn->query($sql);
+                // $sql = "select * from prescription";
+                // $result = $conn->query($sql);
                 
                 
-                while ($row = mysqli_fetch_assoc($result)) {
-                        echo '<h4 style= "color:pink">'.$row['username'].'</h4>';
-                        echo '<p>'.$row['message'].'</p>';
-                        echo "<br>";
-                    }
-                }
+                // while ($row = mysqli_fetch_assoc($result)) {
+                //         echo '<h4 style= "color:pink">'.$row['username'].'</h4>';
+                //         echo '<p>'.$row['message'].'</p>';
+                //         echo "<br>";
+                //     }
+                // }
                 
 
                 
