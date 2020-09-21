@@ -12,6 +12,12 @@ function validate() {
     return false;
 
    }
+   else
+   {
+    alert("message sent successfully!!!");
+
+
+   }
    
   
 }
