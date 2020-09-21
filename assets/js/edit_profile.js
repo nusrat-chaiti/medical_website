@@ -187,7 +187,7 @@ function a_empty()
 
    else if( (uname>='A' && uname<='Z' || uname>='a'&& uname<='z') && ulength< 10)
    {   
-        document.getElementById("about_Msg").innerHTML=" Name length can't be less then 10 charecter";  
+        document.getElementById("about_Msg").innerHTML=" about message length can't be less then 10 charecter";  
        
    }
    

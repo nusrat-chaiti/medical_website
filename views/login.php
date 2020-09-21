@@ -86,13 +86,13 @@
         
         <div class="menu">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Doctors</a></li>
-                <li><a href="#">Interns</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="all_doctors.php">Doctors</a></li>
+                <li><a href="all_interns.php">Interns</a></li>
                 <li><a href="#">Corona Section</a></li>
-                <li><a href="#">Contact us</a></li>
+                <li><a href="contact_us.html">Contact us</a></li>
 
 
             </ul>

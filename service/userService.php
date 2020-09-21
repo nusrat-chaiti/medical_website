@@ -119,7 +119,48 @@
 
 			return $users;
 		}
-//////////////////prescription//////////////////
+//////////////////all doc//////////////////
+
+
+       function getAlldoctor()
+		{
+			$conn = dbConnection();
+
+			if(!$conn){
+				echo "DB connection error";
+			}
+
+			$sql = "select * from doctor";
+			$result = mysqli_query($conn, $sql);
+			$users = [];
+
+			while($row = mysqli_fetch_assoc($result)){
+				array_push($users, $row);
+			}
+
+			return $users;
+		}
+//////////////////all interns//////////////
+function getAllinterns()
+{
+	$conn = dbConnection();
+
+	if(!$conn){
+		echo "DB connection error";
+	}
+
+	$sql = "select * from interns_info";
+	$result = mysqli_query($conn, $sql);
+	$users = [];
+
+	while($row = mysqli_fetch_assoc($result)){
+		array_push($users, $row);
+	}
+
+	return $users;
+}
+
+
 //inserting message
 function chat($name,$message)
 {
