@@ -16,6 +16,8 @@ $doctorId=$_SESSION['user_id'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nova+Round&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="../assets/js/edit_profile.js"></script>
+
 
     <title>doctor dashboard</title>
 </head>
@@ -88,28 +90,28 @@ $doctorId=$_SESSION['user_id'];
 
 
 
-          <form action="../php/userController.php" method="POST">
+          <form action="../php/userController.php" onsubmit="return validate()" method="POST">
 		<fieldset>
 			<legend align="center"><b>Edit profile<b></legend>
 			<table>
 				<tr>
 					<td>Username</td>
-					<td><input type="text" name="name" value="<?=$doctorInfo ['name']?>"></td>
+					<td><input type="text" name="name" id="uname" value="<?=$doctorInfo ['name']?>"  onkeyup="unremover()" onblur="unempty()" ><b><i id="uname_Msg"></i></b><br></td>
 				</tr>
 				<tr>
 					<td>Password</td>
-					<td><input type="password" name="upassword" value="<?=$doctorInfo ['upassword']?>"></td>
+					<td><input type="password" name="upassword" id="password" value="<?=$doctorInfo ['upassword']?>" onkeyup="premover()" onblur="pempty()" ><b><i id="pass_Msg"></i></b><br></td>
 				</tr>
 				<tr>
 					<td>Email</td>
-					<td><input type="text" name="email" value="<?=$doctorInfo ['email']?>"></td>
+					<td><input type="text" name="email" id="email" value="<?=$doctorInfo ['email']?>" onkeyup="eremover()" onblur="eempty()" onmouseout="eempty()" ><b><i id="email_Msg"></i></b><br></td>
 				</tr>
                
 				<tr>
 					<td></td>
 					<td>
 						<input type="hidden" name="user_id" value="<?=$doctorInfo['user_id']?>">
-						<input type="submit" name="edit" value="Update"> 
+						<input type="submit" name="edit" value="Update" onclick="f1()"> 
 						<!-- <a href="all_users.php">Back</a> -->
 					</td>
 				</tr>
@@ -118,22 +120,22 @@ $doctorId=$_SESSION['user_id'];
 	</form>
 
 
-    <form action="../php/userController.php" method="POST">
+    <form name="profile_2" action="../php/userController.php" method="POST" onsubmit="return validate()">
 		<fieldset>
 			<legend align="center"><b>Edit profile info<b></legend>
 			<table>
 				
                 <tr>
 					<td>Degree</td>
-					<td><input type="text" name="d_degree" value="<?=$doctorInfo2 ['d_degree']?>"></td>
+					<td><input type="text" id="degree" name="d_degree" value="<?=$doctorInfo2 ['d_degree']?>" onkeyup="d_remover()" onblur="d_empty()"><b><i id="degree_Msg"></i></b><br></td>
 				</tr>
                 <tr>
 					<td>Workplace</td>
-					<td><input type="text" name="d_workplace" value="<?=$doctorInfo2 ['d_workplace']?>"></td>
+					<td><input type="text" id="workplace" name="d_workplace" value="<?=$doctorInfo2 ['d_workplace']?>" onkeyup="w_remover()" onblur="w_empty()"><b><i id="work_Msg"></i></b><br></td>
 				</tr>
                 <tr>
 					<td>About</td>
-					<td><input type="text" name="d_about" value="<?=$doctorInfo2 ['d_about']?>"></td>
+					<td><input type="text" id="about" name="d_about" value="<?=$doctorInfo2 ['d_about']?>" onkeyup="a_remover()" onblur="a_empty()"><b><i id="about_Msg"></i></b><br></td>
 				</tr>
 				<tr>
 					<td></td>
