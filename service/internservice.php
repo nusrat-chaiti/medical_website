@@ -9,7 +9,7 @@
 		}
 		else{
 
-		$sql = "select * from interns where User_Name = '$userName'";
+		$sql = "select * from customer where User_Name = '$username'";
 		$result = $conn->query($sql);
 		$row = $result->fetch_assoc();
 		return $row;
@@ -26,7 +26,7 @@
 		}
 		else{
 
-		$sql = "select * from interns_info where User_Name = '$userName'";
+		$sql = "select * from interns_info where username = '$username'";
 		$result = $conn->query($sql);
 		$row = $result->fetch_assoc();
 		return $row;
@@ -40,7 +40,7 @@
 			echo "DB connection error";
 		}
 
-		$sql = "select * from interns where User_Name = {$userName}";
+		$sql = "select * from customer where username = {$username}";
 		$result = mysqli_query($conn, $sql);
 		
 
@@ -60,7 +60,7 @@
 			echo "DB connection error";
 		}
 
-		$sql = "select * from interns where User_Name='{$user['userName']}' and Password='{$user['password']}'";
+		$sql = "select * from customer where username ='{$user['username']}' and password='{$user['password']}'";
 		$result = mysqli_query($conn, $sql);
 		$user = mysqli_fetch_assoc($result);
 
@@ -155,7 +155,7 @@
 		}
 		else{
 
-		$sql = "select * from interns_info where User_Name = '$user'";
+		$sql = "select * from interns_info where username = '$user'";
 		$result = $conn->query($sql);
 		$row = $result->fetch_assoc();
 		return $row;
@@ -175,7 +175,7 @@
 		}
 		else{
 
-			$sql = "update interns_info set Picture ='$folder' where User_Name='$a' ";
+			$sql = "update interns_info set Picture ='$folder' where username ='$a' ";
 			if(mysqli_query($conn, $sql)){
 			return true;
 		  }else{
@@ -218,7 +218,7 @@
 		}
 		else{
 
-			$sql = "update interns_info set about ='$about' where User_Name='$a' ";
+			$sql = "update interns_info set about ='$about' where username ='$a' ";
 			if(mysqli_query($conn, $sql)){
 			return true;
 		  }else{
@@ -240,7 +240,7 @@ function addfirstaid($user)
 		}
 		else{
 
-			$sql = "update customer set First_aid ='{$user['First_Aid']}' where User_Name = '{$user['User_Name']}'";
+			$sql = "update customer_info set First_aid ='{$user['First_Aid']}' where username = '{$user['username']}'";
 			if(mysqli_query($conn, $sql)){
 			return true;
 		  }else{
@@ -259,7 +259,7 @@ function addfirstaid($user)
 			echo "DB connection error";
 		}
 
-		$sql = "update interns_info set Degree='{$user['name']}', Date='{$user['acm']}', Instituition ='{$user['inst']}' where User_Name= '{$user['userName']}'";
+		$sql = "update interns_info set Degree='{$user['name']}', Date='{$user['acm']}', Instituition ='{$user['inst']}' where username = '{$user['username']}'";
 
 		if(mysqli_query($conn, $sql)){
 			return true;
@@ -276,7 +276,7 @@ function addfirstaid($user)
 			echo "DB connection error";
 		}
 
-		$sql = "update interns set Name ='{$user['name']}' where User_Name = '{$user['userName']}' and Password = '{$user['password']}'";
+		$sql = "update customer set name ='{$user['name']}' where username = '{$user['username']}' and password = '{$user['password']}'";
 
 		if(mysqli_query($conn, $sql)){
 			return true;
@@ -292,7 +292,7 @@ function addfirstaid($user)
 			echo "DB connection error";
 		}
 
-		$sql = "update interns set Password ='{$user['password2']}' where User_Name = '{$user['userName']}' and Password = '{$user['password1']}'";
+		$sql = "update customer set password ='{$user['password2']}' where username = '{$user['username']}' and password = '{$user['password1']}'";
 
 		if(mysqli_query($conn, $sql)){
 			return true;
