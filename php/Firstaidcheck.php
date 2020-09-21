@@ -4,9 +4,9 @@
 
 	if(isset($_POST['submit'])){
 
-		$username = $_POST['username'];
+		$User_Name = $_POST['User_Name'];
         $First_Aid = $_POST['First_Aid'];
-        if($username =="" && $First_Aid=="" )
+        if($User_Name =="" && $First_Aid=="" )
         {
             echo "Can not be empty";
         }
@@ -14,7 +14,7 @@
         else{
 	
 			$user = [
-				'username'=> $username,
+				'User_Name'=> $User_Name,
 				'First_Aid'=> $First_Aid,
 				
                 
