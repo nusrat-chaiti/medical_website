@@ -6,14 +6,14 @@
 	if(isset($_POST['submit'])){
 
 		$message = $_POST['message'];
-        $userName = $_SESSION['userName'];
+        $username = $_SESSION['username'];
         
 
 	
 			
 			
 
-			$status = chat($userName, $message);
+			$status = chat($username, $message);
 
 			if($status){
 				echo $status;
