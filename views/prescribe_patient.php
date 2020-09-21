@@ -120,11 +120,11 @@ if (isset($_GET['id'])) {
        <header>
            <div class="menu">
                <ul>
-                  <li><a href="#">home</a></li>
+                  <li><a href="doctor_dashboard.php">home</a></li>
 
                    <li><a href="all_patient.php">all patient</a></li>
 
-                   <li><a href="#">appointment</a></li>
+                   <li><a href="all_appointment.php">appointment</a></li>
                    <li><a href="profile.php">My profile</a></li>
                    <li><a href="editprofile.php">edit profile</a></li>
 
