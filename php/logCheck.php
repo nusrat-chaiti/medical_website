@@ -54,7 +54,7 @@ if(isset($_POST['submit']))
                 }
                 else if($data['user_type']=='Intern')
                 {
-                 header('location: ../views/intern_dashboard.html');
+                 header('location: ../views/intern_home.php');
  
                 
                 }
