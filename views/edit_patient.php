@@ -18,7 +18,9 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nova+Round&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Nova+Round&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="../assets/js/edit_patient.js"></script>
+
 
     <title>doctor dashboard</title>
 </head>
@@ -47,11 +49,11 @@ if (isset($_GET['id'])) {
 				</tr>
 				<tr>
 					<td>patient disease</td>
-					<td><input type="text" name="p_disease" value="<?=$user ['p_disease']?>"></td>
+					<td><input type="text" id="p_disease" name="p_disease" value="<?=$user ['p_disease']?>" onkeyup="pd_remover()" onblur="pd_empty()" ><b><i id="pd_Msg"></i></b><br></td>
 				</tr>
                 <tr>
 					<td>patient_disease_his</td>
-					<td><input type="text" name="p_disease_his" value="<?=$user ['p_disease_his']?>"></td>
+					<td><input type="text" id="p_disease_his" name="p_disease_his" value="<?=$user ['p_disease_his']?>"onkeyup="pdh_remover()" onblur="pdh_empty()" ><b><i id="pdh_Msg"></i></b><br></td>
 				</tr>
                
 				<tr>
