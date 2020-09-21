@@ -37,8 +37,8 @@
 
   <div class="col-6 col-s-9">
     <h1>Welcome Home <?php 
-                            echo($_SESSION['uname']);
-                            
+                            // echo($_SESSION['uname']);
+                             echo $_COOKIE['uname']; 
                             ?></h1>
     <p>This is the intern side of "Online Doctor Management System".Here interns those are registered in the system have some specific features that are shown in the right side <i class="arrow right"></i> </p>
   </div>
