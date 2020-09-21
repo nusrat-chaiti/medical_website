@@ -1,18 +1,21 @@
-  
-<?php
-	require_once('../php/session_header.php');
-	require_once('../service/internservice.php');
-
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Doctor Management System</title>
+    <script type="text/javascript" src="../assets/js/changename.js"></script>
     
-?>
-
-
-<fieldset>
+</head>
+<body>
+   
+		<fieldset>
 			<h1 align="center">Online Doctor Management System</h1>
             <table>
                 <legend>Account</legend>
                 <form>
-             
+              <tr>
+                  
+                </tr>
                 <tr>
                   <td>
                       <a href="profile.php"> View Profile</a>
@@ -20,12 +23,12 @@
                 </tr> 
                 <tr>
                     <td>
-                        <a href="changename.php"> Change Name</a>
+                        <a href="changename.html"> Change Name</a>
                     </td>
                 </tr>
                     <tr>
                     <td>
-                        <a href="picture.html">Upload Profile Picture</a>
+                        <a href="picture.html"> Change Profile Picture</a>
                     </td>
                 </tr>
                     <tr>
@@ -35,7 +38,7 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="../php/logout.php"> Logout</a>
+                        <a href="logout.php"> Logout</a>
                     </td>
                 </tr>
                     <tr>
@@ -73,97 +76,60 @@
                         <a href="searchhos.php">Search Hospitals</a>
                     </td>
                 </tr>
-                    <tr>
+                     <tr>
                     <td>
-                        <a href="intern_home.php">Home</a>
+                        <a href="home.php">Home</a>
                     </td>
                 </tr>
-
                 <tr>
                     <td>
                         <a href="show_add_info.php"> Additional Info</a>
                     </td>
                 </tr>
+
+            
                 </form>
             </table>
-    </fieldset>
 
+        </fieldset>
+		
+		<fieldset>
+    <legend><b>Change Prifile Name</b></legend>
+	<form name="myForm" action="../php/check_changename.php" onsubmit="return validateForm()"  method="post">
 
-       
-      
-         
-<fieldset>
-    <legend><b>PROFILE</b></legend>
-    
-	<form>
 		<br/>
-		<table cellpadding="0" cellspacing="0">
-        
+		<table width="100%" cellpadding="0" cellspacing="0">
 			<tr>
-				<td>Name</td>
+				<td>Enter New Name</td>
 				<td>:</td>
-                
+				<td><input name="name" type="text" id="name"></td>
+				<td></td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td>Password</td>
+				<td>:</td>
 				<td>
-              <?php
-       
-              $a=  $_SESSION['userName'];
-      
-              $users = getByID($a);
-               echo $users['Name'];
-               ?>
-       
-                </td>
-				<td rowspan="7" align="center">
-                    <br/>
-                    
+					<input name="password" type="password" id="password">
+					
 				</td>
-			</tr>		
-			<tr><td colspan="3"><hr/></td></tr>
-			<tr>
-				<td>Email</td>
-				<td>:</td>
-				<td><?php
-                echo $users['Email'];
-                ?>
+				<td></td>
+			</tr>
+            
+            </table>
+            
+		<hr/>
+		<input type="submit" onclick="clicked();" value="Change" name="submit">
+        <input type="reset" name="" value="Clear"> 
 
-     </td>
-			</tr>		
-			<tr><td colspan="3"><hr/></td></tr>			
-			<tr>
-				<td>Gender</td>
-				<td>:</td>
-				<td>
-                <?php
-                echo $users['Gender'];
-                ?>
-                </td>
-			</tr>
-			<tr><td colspan="3"><hr/></td></tr>
-			<tr>
-				<td>Date of Birth</td>
-				<td>: </td>
-				<td>
-                <?php
-                echo $users['DOB'];
-                ?>
-     </td>
-                
-			</tr>
-            <tr><td colspan="3"><hr/></td></tr>
-            <tr>
-				<td>Phone</td>
-				<td>: </td>
-				<td>
-                <?php
-                echo $users['Phone'];
-                ?>
-     </td>
-                
-			</tr>
-          
-		</table>	
-        <hr/>
-       	
+
+        
+
+		
 	</form>
-    
-</fieldset>
+
+            
+            
+    </fieldset>
+    </body>
+</html>

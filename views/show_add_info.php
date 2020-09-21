@@ -20,7 +20,7 @@
                 </tr> 
                 <tr>
                     <td>
-                        <a href="changename.php"> Change Name</a>
+                        <a href="changename.html"> Change Name</a>
                     </td>
                 </tr>
                     <tr>
@@ -78,7 +78,7 @@
                         <a href="intern_home.php">Home</a>
                     </td>
                 </tr>
-
+                
                 <tr>
                     <td>
                         <a href="show_add_info.php"> Additional Info</a>
@@ -93,14 +93,14 @@
       
          
 <fieldset>
-    <legend><b>PROFILE</b></legend>
+    <legend><b>Aditional Information</b></legend>
     
 	<form>
 		<br/>
 		<table cellpadding="0" cellspacing="0">
         
 			<tr>
-				<td>Name</td>
+				<td>Degree</td>
 				<td>:</td>
                 
 				<td>
@@ -108,8 +108,8 @@
        
               $a=  $_SESSION['userName'];
       
-              $users = getByID($a);
-               echo $users['Name'];
+              $users = getaddByID($a);
+               echo $users['Degree'];
                ?>
        
                 </td>
@@ -120,42 +120,50 @@
 			</tr>		
 			<tr><td colspan="3"><hr/></td></tr>
 			<tr>
-				<td>Email</td>
+				<td>Date</td>
 				<td>:</td>
 				<td><?php
-                echo $users['Email'];
+                echo $users['Date'];
                 ?>
 
      </td>
 			</tr>		
 			<tr><td colspan="3"><hr/></td></tr>			
 			<tr>
-				<td>Gender</td>
+				<td>Instituition</td>
 				<td>:</td>
 				<td>
                 <?php
-                echo $users['Gender'];
+                echo $users['Instituition'];
                 ?>
                 </td>
 			</tr>
 			<tr><td colspan="3"><hr/></td></tr>
 			<tr>
-				<td>Date of Birth</td>
+				<td>About Me</td>
 				<td>: </td>
 				<td>
                 <?php
-                echo $users['DOB'];
+                echo $users['about'];
                 ?>
      </td>
                 
 			</tr>
             <tr><td colspan="3"><hr/></td></tr>
             <tr>
-				<td>Phone</td>
+				<td>Picture</td>
 				<td>: </td>
 				<td>
                 <?php
-                echo $users['Phone'];
+                if ($users['Picture'] == "")
+                {
+                    echo "No data found";
+                }
+                else {
+                    echo "<img src=".$users['Picture']." height=200 width=200 />";
+                
+                }
+                
                 ?>
      </td>
                 

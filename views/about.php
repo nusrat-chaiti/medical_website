@@ -1,14 +1,15 @@
-  
-<?php
-	require_once('../php/session_header.php');
-	require_once('../service/internservice.php');
-
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
     
-?>
-
-
+</head>
+<body>
 <fieldset>
-			<h1 align="center">Online Doctor Management System</h1>
+
+			<h1 align="center"> Online Doctor Management System</h1>
+            
+            
             <table>
                 <legend>Account</legend>
                 <form>
@@ -55,7 +56,7 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="about.php"> About Me</a>
+                        <a href="about.html"> About Me</a>
                     </td>
                 </tr>
                     <tr>
@@ -70,12 +71,7 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="searchhos.php">Search Hospitals</a>
-                    </td>
-                </tr>
-                    <tr>
-                    <td>
-                        <a href="intern_home.php">Home</a>
+                        <a href="searchhospti.php">Search Hospitals</a>
                     </td>
                 </tr>
 
@@ -84,86 +80,27 @@
                         <a href="show_add_info.php"> Additional Info</a>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <a href="intern_home.php">Home</a>
+                    </td>
+                </tr>
                 </form>
             </table>
     </fieldset>
-
-
-       
-      
-         
 <fieldset>
-    <legend><b>PROFILE</b></legend>
-    
-	<form>
-		<br/>
-		<table cellpadding="0" cellspacing="0">
-        
-			<tr>
-				<td>Name</td>
-				<td>:</td>
-                
-				<td>
-              <?php
-       
-              $a=  $_SESSION['userName'];
-      
-              $users = getByID($a);
-               echo $users['Name'];
-               ?>
-       
-                </td>
-				<td rowspan="7" align="center">
-                    <br/>
-                    
-				</td>
-			</tr>		
-			<tr><td colspan="3"><hr/></td></tr>
-			<tr>
-				<td>Email</td>
-				<td>:</td>
-				<td><?php
-                echo $users['Email'];
-                ?>
 
-     </td>
-			</tr>		
-			<tr><td colspan="3"><hr/></td></tr>			
-			<tr>
-				<td>Gender</td>
-				<td>:</td>
-				<td>
-                <?php
-                echo $users['Gender'];
-                ?>
-                </td>
-			</tr>
-			<tr><td colspan="3"><hr/></td></tr>
-			<tr>
-				<td>Date of Birth</td>
-				<td>: </td>
-				<td>
-                <?php
-                echo $users['DOB'];
-                ?>
-     </td>
-                
-			</tr>
-            <tr><td colspan="3"><hr/></td></tr>
-            <tr>
-				<td>Phone</td>
-				<td>: </td>
-				<td>
-                <?php
-                echo $users['Phone'];
-                ?>
-     </td>
-                
-			</tr>
-          
-		</table>	
-        <hr/>
-       	
-	</form>
-    
+    <legend><b>About Me:</b></legend>
+    <script type="text/javascript" src="../assets/js/about.js"></script>
+
+
+	  <form name="myForm" action="../php/me.php" onsubmit="return validateForm()" method="post" required>
+       Write About You: 
+       <br>
+       <input type="text" name="about" maxlength="50" size="50" style="height: 100px;">
+       <input type="submit" value="Submit" name="submit">
+      </form>
 </fieldset>
+</body>
+</html>
+

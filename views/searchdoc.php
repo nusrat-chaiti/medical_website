@@ -1,18 +1,18 @@
-  
-<?php
-	require_once('../php/session_header.php');
-	require_once('../service/internservice.php');
 
-    
-?>
-
-
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Doctor Mangement System</title>
+	
+	
+</head>
+<body>
 <fieldset>
 			<h1 align="center">Online Doctor Management System</h1>
             <table>
                 <legend>Account</legend>
                 <form>
-             
+              
                 <tr>
                   <td>
                       <a href="profile.php"> View Profile</a>
@@ -20,7 +20,7 @@
                 </tr> 
                 <tr>
                     <td>
-                        <a href="changename.php"> Change Name</a>
+                        <a href="changename.html"> Change Name</a>
                     </td>
                 </tr>
                     <tr>
@@ -35,7 +35,7 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="../php/logout.php"> Logout</a>
+                        <a href="logout.php"> Logout</a>
                     </td>
                 </tr>
                     <tr>
@@ -65,20 +65,24 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="searchdoc.php">Search Doctors</a>
+                        <a href="searchdoc.html">Search Doctors</a>
                     </td>
                 </tr>
                     <tr>
                     <td>
-                        <a href="searchhos.php">Search Hospitals</a>
+                        <a href="searchhos.html">Search Hospitals</a>
                     </td>
                 </tr>
                     <tr>
+                    <td>
+                        <a href="home.php">Home</a>
+                    </td>
+                </tr>
+                <tr>
                     <td>
                         <a href="intern_home.php">Home</a>
                     </td>
                 </tr>
-
                 <tr>
                     <td>
                         <a href="show_add_info.php"> Additional Info</a>
@@ -87,83 +91,23 @@
                 </form>
             </table>
     </fieldset>
-
-
-       
-      
-         
 <fieldset>
-    <legend><b>PROFILE</b></legend>
+    <legend><b>Search Doctors</b></legend>
+    Enter Doctor Name
     
-	<form>
-		<br/>
-		<table cellpadding="0" cellspacing="0">
+    <script type="text/javascript" src="../assets/js/getdoctor.js"></script>
+    <link rel = "stylesheet" type="text/css" href="../assets/doctable.css">
+    
+    
+    
+        <input align="center"  type="text" id="Name" name="Name" onkeyup="load()" /> 
+		
         
-			<tr>
-				<td>Name</td>
-				<td>:</td>
-                
-				<td>
-              <?php
-       
-              $a=  $_SESSION['userName'];
-      
-              $users = getByID($a);
-               echo $users['Name'];
-               ?>
-       
-                </td>
-				<td rowspan="7" align="center">
-                    <br/>
-                    
-				</td>
-			</tr>		
-			<tr><td colspan="3"><hr/></td></tr>
-			<tr>
-				<td>Email</td>
-				<td>:</td>
-				<td><?php
-                echo $users['Email'];
-                ?>
+        <div id="searchdata"></div>
 
-     </td>
-			</tr>		
-			<tr><td colspan="3"><hr/></td></tr>			
-			<tr>
-				<td>Gender</td>
-				<td>:</td>
-				<td>
-                <?php
-                echo $users['Gender'];
-                ?>
-                </td>
-			</tr>
-			<tr><td colspan="3"><hr/></td></tr>
-			<tr>
-				<td>Date of Birth</td>
-				<td>: </td>
-				<td>
-                <?php
-                echo $users['DOB'];
-                ?>
-     </td>
-                
-			</tr>
-            <tr><td colspan="3"><hr/></td></tr>
-            <tr>
-				<td>Phone</td>
-				<td>: </td>
-				<td>
-                <?php
-                echo $users['Phone'];
-                ?>
-     </td>
-                
-			</tr>
-          
-		</table>	
-        <hr/>
-       	
-	</form>
-    
+
+        
+  
 </fieldset>
+</body>
+</html>

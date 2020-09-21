@@ -1,18 +1,20 @@
-  
 <?php
-	require_once('../php/session_header.php');
+	
 	require_once('../service/internservice.php');
+    
 
     
 ?>
 
-
 <fieldset>
 			<h1 align="center">Online Doctor Management System</h1>
+            <link rel = "stylesheet" type="text/css" href="../assets/chat.css">
+            <script type="text/javascript" src="../assets/js/validation.js"></script>
+            
             <table>
                 <legend>Account</legend>
                 <form>
-             
+              
                 <tr>
                   <td>
                       <a href="profile.php"> View Profile</a>
@@ -20,7 +22,7 @@
                 </tr> 
                 <tr>
                     <td>
-                        <a href="changename.php"> Change Name</a>
+                        <a href="changename.html"> Change Name</a>
                     </td>
                 </tr>
                     <tr>
@@ -55,7 +57,7 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="about.php"> About Me</a>
+                        <a href="about.html"> About Me</a>
                     </td>
                 </tr>
                     <tr>
@@ -70,7 +72,7 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="searchhos.php">Search Hospitals</a>
+                        <a href="searchhospti.php">Search Hospitals</a>
                     </td>
                 </tr>
                     <tr>
@@ -78,92 +80,61 @@
                         <a href="intern_home.php">Home</a>
                     </td>
                 </tr>
-
                 <tr>
                     <td>
                         <a href="show_add_info.php"> Additional Info</a>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <a href="intern_home.php">Home</a>
+                    </td>
+                </tr>
                 </form>
             </table>
     </fieldset>
-
-
-       
-      
-         
 <fieldset>
-    <legend><b>PROFILE</b></legend>
+    <script type="text/javascript" src="../assets/js/chat.js"></script>
+    <legend><b>Suggestion Chat Box:</b></legend>
+    <form name="myForm"  action="../php/chat.php" onsubmit="return validateForm()" method="post">
+     <input id='message' type="text" name= "message" placeholder='Type your message'>
+     <input type="submit" name="submit" value="message"/>
+     </input>
+    </form>
+    <div id="chat">
+    <?php
+     require_once('../db/db.php');
     
-	<form>
-		<br/>
-		<table cellpadding="0" cellspacing="0">
-        
-			<tr>
-				<td>Name</td>
-				<td>:</td>
-                
-				<td>
-              <?php
-       
-              $a=  $_SESSION['userName'];
-      
-              $users = getByID($a);
-               echo $users['Name'];
-               ?>
-       
-                </td>
-				<td rowspan="7" align="center">
-                    <br/>
-                    
-				</td>
-			</tr>		
-			<tr><td colspan="3"><hr/></td></tr>
-			<tr>
-				<td>Email</td>
-				<td>:</td>
-				<td><?php
-                echo $users['Email'];
-                ?>
+     $conn = dbConnection();
 
-     </td>
-			</tr>		
-			<tr><td colspan="3"><hr/></td></tr>			
-			<tr>
-				<td>Gender</td>
-				<td>:</td>
-				<td>
-                <?php
-                echo $users['Gender'];
-                ?>
-                </td>
-			</tr>
-			<tr><td colspan="3"><hr/></td></tr>
-			<tr>
-				<td>Date of Birth</td>
-				<td>: </td>
-				<td>
-                <?php
-                echo $users['DOB'];
-                ?>
-     </td>
-                
-			</tr>
-            <tr><td colspan="3"><hr/></td></tr>
-            <tr>
-				<td>Phone</td>
-				<td>: </td>
-				<td>
-                <?php
-                echo $users['Phone'];
-                ?>
-     </td>
-                
-			</tr>
-          
-		</table>	
-        <hr/>
-       	
-	</form>
+		if(!$conn){
+			echo "DB connection error";
+		}
+		else{
+
+	  $sql = "select * from chat";
+	  $result = $conn->query($sql);
+     
     
-</fieldset>
+       while ($row = mysqli_fetch_assoc($result)) {
+            echo '<h2 style= "color:green">'.$row['User_Name'].'</h2>';
+            echo '<p>'.$row['message'].'</p>';
+            echo "<br>";
+        }
+    }
+    
+
+    
+    
+
+    ?>
+    
+    </div>
+     
+    
+    
+ </fieldset>
+
+
+        
+       

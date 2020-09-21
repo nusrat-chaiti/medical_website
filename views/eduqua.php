@@ -1,18 +1,15 @@
-  
-<?php
-	require_once('../php/session_header.php');
-	require_once('../service/internservice.php');
-
-    
-?>
-
-
+<html>
+<head>
+	<script type="text/javascript" src="../assets/js/edu.js"></script>
+	
+</head>
+<body>
 <fieldset>
 			<h1 align="center">Online Doctor Management System</h1>
             <table>
                 <legend>Account</legend>
                 <form>
-             
+
                 <tr>
                   <td>
                       <a href="profile.php"> View Profile</a>
@@ -20,7 +17,7 @@
                 </tr> 
                 <tr>
                     <td>
-                        <a href="changename.php"> Change Name</a>
+                        <a href="changename.html"> Change Name</a>
                     </td>
                 </tr>
                     <tr>
@@ -35,7 +32,7 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="../php/logout.php"> Logout</a>
+                        <a href="logout.php"> Logout</a>
                     </td>
                 </tr>
                     <tr>
@@ -55,7 +52,7 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="about.php"> About Me</a>
+                        <a href="about.html"> About Me</a>
                     </td>
                 </tr>
                     <tr>
@@ -65,105 +62,65 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="searchdoc.php">Search Doctors</a>
+                        <a href="searchdoc.html">Search Doctors</a>
                     </td>
                 </tr>
                     <tr>
                     <td>
-                        <a href="searchhos.php">Search Hospitals</a>
+                        <a href="searchhospti.html">Search Hospitals</a>
                     </td>
                 </tr>
-                    <tr>
-                    <td>
-                        <a href="intern_home.php">Home</a>
-                    </td>
-                </tr>
-
                 <tr>
                     <td>
                         <a href="show_add_info.php"> Additional Info</a>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <a href="intern_home.php">Home</a>
+                    </td>
+                </tr>
                 </form>
             </table>
     </fieldset>
-
-
-       
-      
-         
 <fieldset>
-    <legend><b>PROFILE</b></legend>
+    <legend><b>Adding Educational Information</b></legend>
     
-	<form>
-		<br/>
-		<table cellpadding="0" cellspacing="0">
+    
+    <form name="myForm" action="../php/educheck.php" onsubmit="return validateForm()"  method="post" >
         
-			<tr>
-				<td>Name</td>
-				<td>:</td>
-                
-				<td>
-              <?php
-       
-              $a=  $_SESSION['userName'];
-      
-              $users = getByID($a);
-               echo $users['Name'];
-               ?>
-       
-                </td>
-				<td rowspan="7" align="center">
-                    <br/>
-                    
-				</td>
-			</tr>		
-			<tr><td colspan="3"><hr/></td></tr>
-			<tr>
-				<td>Email</td>
-				<td>:</td>
-				<td><?php
-                echo $users['Email'];
-                ?>
 
-     </td>
-			</tr>		
-			<tr><td colspan="3"><hr/></td></tr>			
-			<tr>
-				<td>Gender</td>
+        
+        <br/>
+       <tr>
+				<td>Name of the degree &nbsp &nbsp &nbsp &nbsp   </td>
 				<td>:</td>
-				<td>
-                <?php
-                echo $users['Gender'];
-                ?>
-                </td>
+				<td><input name="name" type="text" id="name" ></td>
+				<td id="namemsg"></td>
 			</tr>
-			<tr><td colspan="3"><hr/></td></tr>
-			<tr>
-				<td>Date of Birth</td>
-				<td>: </td>
-				<td>
-                <?php
-                echo $users['DOB'];
-                ?>
-     </td>
-                
+        <br/>
+        <tr><td colspan="4"><hr/></td></tr>
+         <tr>
+				<td>Name of the Instituition&nbsp </td>
+				<td>:</td>
+				<td><input name="inst" type="text" id="inst"></td>
+				<td></td>
 			</tr>
-            <tr><td colspan="3"><hr/></td></tr>
-            <tr>
-				<td>Phone</td>
-				<td>: </td>
-				<td>
-                <?php
-                echo $users['Phone'];
-                ?>
-     </td>
-                
+        <br/>
+        <tr><td colspan="4"><hr/></td></tr>
+        <tr>
+				<td>Date of Accomplish&nbsp &nbsp &nbsp &nbsp </td>
+				<td>:</td>
+				<td> <input type="date" id="acm" name="acm" id="acm"></td>
+				<td></td>
 			</tr>
-          
-		</table>	
-        <hr/>
-       	
-	</form>
-    
+        <hr />
+        <input type="submit" value="Submit" name="submit">
+        <input type="reset" name="" value="Clear"> 
+        
+        
+    </form>
+   
 </fieldset>
+</body>
+</html>

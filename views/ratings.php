@@ -1,18 +1,29 @@
-  
 <?php
 	require_once('../php/session_header.php');
 	require_once('../service/internservice.php');
 
     
 ?>
-
-
-<fieldset>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Doctor Management System</title>
+   
+    
+    
+    
+	
+</head>
+<body>
+   
+		<fieldset>
+        
+	     
 			<h1 align="center">Online Doctor Management System</h1>
             <table>
                 <legend>Account</legend>
                 <form>
-             
+              
                 <tr>
                   <td>
                       <a href="profile.php"> View Profile</a>
@@ -25,7 +36,7 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="picture.html">Upload Profile Picture</a>
+                        <a href="picture.html"> Change Profile Picture</a>
                     </td>
                 </tr>
                     <tr>
@@ -65,20 +76,19 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="searchdoc.php">Search Doctors</a>
+                        <a href="searchdoc.html">Search Doctors</a>
                     </td>
                 </tr>
                     <tr>
                     <td>
-                        <a href="searchhos.php">Search Hospitals</a>
+                        <a href="searchhospti.php">Search Hospitals</a>
                     </td>
                 </tr>
-                    <tr>
+                <tr>
                     <td>
                         <a href="intern_home.php">Home</a>
                     </td>
                 </tr>
-
                 <tr>
                     <td>
                         <a href="show_add_info.php"> Additional Info</a>
@@ -86,84 +96,86 @@
                 </tr>
                 </form>
             </table>
-    </fieldset>
-
-
-       
-      
-         
-<fieldset>
-    <legend><b>PROFILE</b></legend>
-    
-	<form>
-		<br/>
-		<table cellpadding="0" cellspacing="0">
-        
+		
+		<table>
 			<tr>
-				<td>Name</td>
-				<td>:</td>
-                
-				<td>
-              <?php
-       
-              $a=  $_SESSION['userName'];
-      
-              $users = getByID($a);
-               echo $users['Name'];
-               ?>
-       
-                </td>
-				<td rowspan="7" align="center">
-                    <br/>
-                    
-				</td>
-			</tr>		
-			<tr><td colspan="3"><hr/></td></tr>
-			<tr>
-				<td>Email</td>
-				<td>:</td>
-				<td><?php
-                echo $users['Email'];
-                ?>
-
-     </td>
-			</tr>		
-			<tr><td colspan="3"><hr/></td></tr>			
-			<tr>
-				<td>Gender</td>
-				<td>:</td>
-				<td>
-                <?php
-                echo $users['Gender'];
-                ?>
-                </td>
+				<td>Welcome to System<a href="home.php"> Home</a>  <a href="Logout.php"> Logout</a> </td>
+				
 			</tr>
-			<tr><td colspan="3"><hr/></td></tr>
-			<tr>
-				<td>Date of Birth</td>
-				<td>: </td>
-				<td>
-                <?php
-                echo $users['DOB'];
-                ?>
-     </td>
-                
-			</tr>
-            <tr><td colspan="3"><hr/></td></tr>
             <tr>
-				<td>Phone</td>
-				<td>: </td>
-				<td>
-                <?php
-                echo $users['Phone'];
-                ?>
-     </td>
-                
-			</tr>
-          
-		</table>	
-        <hr/>
-       	
-	</form>
+                <td>
+                    <fieldset>
+                    <link rel = "stylesheet" type="text/css" href="../assets/style1.css">
+                    
+                    
+                    
+                    
+                 <div class="container">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/star.svg" class="top-star" />
+                    <h1>
+                    <?php
+                     $a=  $_SESSION['userName'];
+      
+                     $users = getRating($a);
+                     echo $users['User_Name'];
+                       ?>
+                       Your ratings is :
+                       <?php
+                       echo $users['Rating'];
+                       ?>
+                       out of 5
+                       <b>
+                       <br>
+                       <?php
+                       for ($i = 0; $i <$users['Rating'] ; $i++) { 
+
+                           echo"★";
+                           
+                       }
+                       ?>
+                       </b>
+
+                      </h1>
+                       
+
+
+
+                    
+
+                  </div>
+                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </fieldset>
+                </td>
+            </tr>
+			
+			
+            </table>
+  
     
-</fieldset>
