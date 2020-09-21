@@ -276,7 +276,7 @@ function addfirstaid($user)
 			echo "DB connection error";
 		}
 
-		$sql = "update customer set name ='{$user['name']}' where username = '{$user['username']}' and password = '{$user['password']}'";
+		$sql = "update customer set name ='{$user['name']}' where username = '{$user['username']}' and upassword = '{$user['password']}'";
 
 		if(mysqli_query($conn, $sql)){
 			return true;
@@ -292,7 +292,7 @@ function addfirstaid($user)
 			echo "DB connection error";
 		}
 
-		$sql = "update customer set password ='{$user['password2']}' where username = '{$user['username']}' and password = '{$user['password1']}'";
+		$sql = "update customer set upassword ='{$user['password2']}' where username = '{$user['username']}' and upassword = '{$user['password1']}'";
 
 		if(mysqli_query($conn, $sql)){
 			return true;
