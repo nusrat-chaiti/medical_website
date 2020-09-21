@@ -9,7 +9,7 @@ var ajax = new XMLHttpRequest();
  
             var html = "";
             for(var a = 0; a < data.length; a++) {
-                var User_Name = data[a].User_Name;
+                var User_Name = data[a].username;
                 var Disease_desciption = data[a].Disease_desciption;
                 var Condition = data[a].Condition;
                 var First_aid = data[a].First_aid;
