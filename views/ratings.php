@@ -26,7 +26,7 @@
               
                 <tr>
                   <td>
-                      <a href="profile.php"> View Profile</a>
+                      <a href="intern_profile.php"> View Profile</a>
                   </td>
                 </tr> 
                 <tr>
