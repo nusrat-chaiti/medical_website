@@ -106,10 +106,10 @@
 				<td>
               <?php
        
-              $a=  $_SESSION['userName'];
+              $a=  $_SESSION['uname'];
       
               $users = getByID($a);
-               echo $users['Name'];
+               echo $users['name'];
                ?>
        
                 </td>
@@ -123,7 +123,7 @@
 				<td>Email</td>
 				<td>:</td>
 				<td><?php
-                echo $users['Email'];
+                echo $users['email'];
                 ?>
 
      </td>
@@ -134,7 +134,7 @@
 				<td>:</td>
 				<td>
                 <?php
-                echo $users['Gender'];
+                echo $users['gender'];
                 ?>
                 </td>
 			</tr>
@@ -144,7 +144,7 @@
 				<td>: </td>
 				<td>
                 <?php
-                echo $users['DOB'];
+                echo $users['dob'];
                 ?>
      </td>
              </tr>   

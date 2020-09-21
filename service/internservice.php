@@ -9,7 +9,7 @@
 		}
 		else{
 
-		$sql = "select * from customer where User_Name = '$username'";
+		$sql = "select * from customer where username = '$userName'";
 		$result = $conn->query($sql);
 		$row = $result->fetch_assoc();
 		return $row;
@@ -128,7 +128,7 @@
 	function checkUname($userName)
 	{
 		$conn = dbConnection();
-		$sql = "select * from interns where User_Name='{$userName}'";
+		$sql = "select * from customer where username='{$userName}'";
 		if(mysqli_query($conn, $sql)){
 			$result=mysqli_query($conn, $sql);
 			$user = mysqli_fetch_assoc($result);
@@ -276,7 +276,7 @@ function addfirstaid($user)
 			echo "DB connection error";
 		}
 
-		$sql = "update customer set name ='{$user['name']}' where username = '{$user['username']}' and upassword = '{$user['password']}'";
+		$sql = "update customer set name ='{$user['name']}' where username = '{$user['uname']}' and upassword = '{$user['password']}'";
 
 		if(mysqli_query($conn, $sql)){
 			return true;
