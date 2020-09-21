@@ -404,9 +404,9 @@
   
   }
   h1 {
-      color : #000000;
+      /* color : #000000; */
       text-align : center;
-      font-family: "SIMPSON";
+      /* font-family: "SIMPSON"; */
   }
   form {
       width: 300px;
