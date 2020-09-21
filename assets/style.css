@@ -373,6 +373,19 @@
   
   
   }
+  .dash_view
+  {
+    width: 800px;
+    height: 730px;
+    top: 60px;
+    position: relative;
+    margin: 10% auto;
+    background:transparent;
+    padding: 5px;
+    overflow: hidden;
+  
+  
+  }
   .dash_text
   {
     width: 400px;
