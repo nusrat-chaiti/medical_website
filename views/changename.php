@@ -38,7 +38,7 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="logout.php"> Logout</a>
+                        <a href="../php/logout.php"> Logout</a>
                     </td>
                 </tr>
                     <tr>
@@ -48,7 +48,7 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="eduqua.html"> Add Degree</a>
+                        <a href="eduqua.php"> Add Degree</a>
                     </td>
                 </tr>
                     <tr>
