@@ -119,7 +119,28 @@
 
 			return $users;
 		}
+//////////////////prescription//////////////////
+//inserting message
+function chat($name,$message)
+{
+	
+	$conn = dbConnection();
 
+	if(!$conn){
+		echo "DB connection error";
+	}
+	else{
+
+		$sql = "insert into prescription values('', '$name','$message')";
+		if(mysqli_query($conn, $sql)){
+		return true;
+	  }else{
+		return false;
+	  }
+	
+	}
+
+}
 
 
 function validate($info){
@@ -312,26 +333,26 @@ function validate($info){
 
 	// }
 	//inserting message
-	function chat($user,$message)
-	{
+	// function chat($user,$message)
+	// {
 		
-		$conn = dbConnection();
+	// 	$conn = dbConnection();
 
-		if(!$conn){
-			echo "DB connection error";
-		}
-		else{
+	// 	if(!$conn){
+	// 		echo "DB connection error";
+	// 	}
+	// 	else{
 
-			$sql = "insert into chat values('', '$user','$message')";
-			if(mysqli_query($conn, $sql)){
-			return true;
-		  }else{
-			return false;
-		  }
+	// 		$sql = "insert into chat values('', '$user','$message')";
+	// 		if(mysqli_query($conn, $sql)){
+	// 		return true;
+	// 	  }else{
+	// 		return false;
+	// 	  }
 		
-		}
+	// 	}
 
-	}
+	// }
 
 	///about me
 	function about($a,$about)

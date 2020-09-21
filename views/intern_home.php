@@ -18,7 +18,7 @@
 <div class="row">
   <div class="col-3 col-s-3 menu">
     <ul>
-      <li><a href="profile.php"> View Profile</a></li>
+      <li><a href="intern_profile.php"> View Profile</a></li>
       <li><a href="changename.php"> Change Name</a></li>
       <li><a href="picture.html"> Change Profile Picture</a></li>
       <li><a href="change_password.html"> Change Password </a></li>

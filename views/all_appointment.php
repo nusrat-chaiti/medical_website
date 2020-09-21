@@ -57,6 +57,7 @@ $doctorId=$_SESSION['user_id'];
 
                         <a href="delete_patient.php?id=<?=$users[$i]['a_id']?>"><h3 style="color:pink">delete</h3></a> 
 
+
                     </td>
                 </tr>
                     
@@ -83,7 +84,7 @@ $doctorId=$_SESSION['user_id'];
                <ul>
                   <li><a href="#">home</a></li>
 
-                   <li><a href="all_patients.php">all patient</a></li>
+                   <li><a href="all_patient.php">all patient</a></li>
                    <!-- <li><a href="edit_patient.php">edit patient disease history</a></li> -->
 
                    <li><a href="all_appointment.php">all appointments</a></li>

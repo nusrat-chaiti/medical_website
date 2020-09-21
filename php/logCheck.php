@@ -37,6 +37,10 @@ if(isset($_POST['submit']))
                 $_SESSION['name']=$data['name'];
                 $_SESSION['user_id']=$data['user_id'];
                 $_SESSION['user_type']=$data['user_type'];
+                 setcookie('uname', $uname, time()+48900000, '/');
+                 setcookie('status',"OK",time()+48900000,'/'); 
+
+
 
               //  echo "id:".$data['user_id'];
 
@@ -70,8 +74,10 @@ if(isset($_POST['submit']))
             //       setcookie('dob', $_POST['dob'], time()+48900000, '/');
             //       setcookie('status',"OK",time()+48900000,'/'); 
             //       $_SESSION['uname']=$user['uname'];
-            //     $_SESSION['password']=$user['password'];
-            //     $_SESSION['user_type']=$user['user_type'];
+            //       $_SESSION['password']=$user['password'];
+            //       $_SESSION['user_type']=$user['user_type'];
+            //       $_SESSION['user_id']=$data['user_id'];
+
 
                   
                   
@@ -83,27 +89,29 @@ if(isset($_POST['submit']))
             //    else
             //    {
 
-            //     // setcookie('rememberme',$_POST['rememberme'], time()-3600, '/');
+            //     setcookie('rememberme',$_POST['rememberme'], time()-3600, '/');
                 
-            //     // setcookie('uname', $uname, time()+3600, '/');
-            //     // setcookie('password', $password, time()+3600, '/');
-            //     // setcookie('name', $_POST['name'], time()+3600, '/');
-            //     // setcookie('email',  $_POST['email'], time()+3600, '/');
-            //     // setcookie('gender', $_POST['gender'], time()+3600, '/');
+            //      setcookie('uname', $uname, time()+3600, '/');
+            //      setcookie('password', $password, time()+3600, '/');
+            //      setcookie('name', $_POST['name'], time()+3600, '/');
+            //      setcookie('email',  $_POST['email'], time()+3600, '/');
+            //      setcookie('gender', $_POST['gender'], time()+3600, '/');
 
-            //     // setcookie('dob', $_POST['dob'], time()+3600, '/'); 
+            //      setcookie('dob', $_POST['dob'], time()+3600, '/'); 
 
                    
 
-            //     // $_SESSION['uname']=$user['uname'];
-            //     // $_SESSION['password']=$user['password'];
-            //     // $_SESSION['user_type']=$user['user_type'];
+            //      $_SESSION['uname']=$user['uname'];
+            //      $_SESSION['password']=$user['password'];
+            //      $_SESSION['user_type']=$user['user_type'];
+            //      $_SESSION['user_id']=$data['user_id'];
 
 
-            //    // header('location: ../views/doctor_dashboard.php?doct $_SESSION['user_id']');
+
+            //     header('location: ../views/doctor_dashboard.php?');
 
                
-            //    }
+            //     }
               
 
             }
