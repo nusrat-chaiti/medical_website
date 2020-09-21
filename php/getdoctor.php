@@ -2,7 +2,7 @@
 
 	$Name = $_POST['Name'];
 
-	$conn = mysqli_connect('localhost', 'root', '', 'web');
+	$conn = mysqli_connect('localhost', 'root', '', 'online_doctor');
 	$sql= "select * from interns where Name like '%{$Name}%'";
 
 	$result = mysqli_query($conn, $sql);
@@ -11,7 +11,7 @@
 				<tr>
 					<td>Name</td>
 					<td>Email</td>
-					<td>Phone</td>
+					
                     <td>Gender</td>
                     <td>User Type</td>
 				</tr>";
@@ -20,7 +20,7 @@
 			$data .= "<tr>
 							<td>{$row['Name']}</td>
 							<td>{$row['Email']}</td>
-							<td>{$row['Phone']}</td>
+							
                             <td>{$row['Gender']}</td>
                             <td>{$row['User_Type']}</td>
 					</tr>";
