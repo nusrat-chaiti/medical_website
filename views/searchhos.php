@@ -21,7 +21,7 @@
                 </tr>
                 <tr>
                   <td>
-                      <a href="profile.php"> View Profile</a> <br>
+                      <a href="intern_profile.php"> View Profile</a> <br>
                   </td>
                 </tr> 
                 <tr>
@@ -51,7 +51,7 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="eduqua.html"> Add Degree</a> <br>
+                        <a href="eduqua.php"> Add Degree</a> <br>
                     </td>
                 </tr>
                     <tr>
