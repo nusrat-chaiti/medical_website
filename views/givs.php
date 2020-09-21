@@ -103,7 +103,7 @@
     </form>
     <div id="chat">
     <?php
-     require_once('../db/db.php');
+     require_once('../db/dbf.php');
     
      $conn = dbConnection();
 
