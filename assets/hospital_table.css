@@ -1,0 +1,12 @@
+table,th,td {
+    border : 3px solid green;
+    border-collapse: collapse;
+  }
+  th {
+    padding: 20px;
+    color:blue;
+  }
+  td{
+      color: black;
+      background-color: lightblue;
+  }

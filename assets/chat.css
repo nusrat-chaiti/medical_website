@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#chat{
+    border : 3px solid green;
+    
+    margin : 24px auto;
+    width: 450px;
+    height: 500px;
+}
+#message{
+    border : 1px solid red;
+    
+    width: 100p;
+    height: 100px;
+    
+}
+
