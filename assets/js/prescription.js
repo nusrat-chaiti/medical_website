@@ -6,12 +6,8 @@ function validate() {
       alert("Empty message can not be sent");
       return false;
     }
-   else if(x.split(" ").length<2)
-   {
-    alert("Name must contain 2 words");
-    return false;
-
-   }
+   
+   
    else
    {
     alert("message sent successfully!!!");

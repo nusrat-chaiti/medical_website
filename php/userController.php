@@ -183,7 +183,7 @@ if(isset($_POST['upload'])){
 
 
 
-if(isset($_POST['delete_ap'])){
+if(isset($_POST['delete_p'])){
 
 			
 	$p_disease 		    = $_POST['p_disease'];
