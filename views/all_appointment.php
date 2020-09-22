@@ -55,7 +55,7 @@ $doctorId=$_SESSION['user_id'];
                     <td>
                     <!-- <input type="hidden" name="d_id" value="<?=$users[$i]['p_id']?>"> -->
 
-                        <a href="delete_patient.php?id=<?=$users[$i]['a_id']?>"><h3 style="color:pink">delete</h3></a> 
+                        <a href="delete_appointment.php?id=<?=$users[$i]['a_id']?>"><h3 style="color:pink">delete</h3></a> 
 
 
                     </td>

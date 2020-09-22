@@ -68,18 +68,21 @@
     if(isset($_POST['edit_d'])){
 
 		
-        $degree 		= $_POST['d_degree'];
+		$degree 		= $_POST['d_degree'];
+		$specialist		= $_POST['d_specialist'];
+
         $workplace 		= $_POST['d_workplace'];
         $about 		    = $_POST['d_about'];
         $id 		    = $_POST['d_id'];
 
-		if(empty($degree)|| empty($workplace)|| empty($about)){
+		if(empty($degree)|| empty($workplace)|| empty($about)|| empty($specialist)){
 			header('location: ../views/profile.php?id={$id}');
 		}else{
 
 			$user = [
 				
-                'd_degree'=> $degree,
+				'd_degree'=> $degree,
+				'd_specialist'=> $specialist,
                 'd_workplace'=> $workplace,
                 'd_about'=> $about,
 				'd_id'=> $id
@@ -148,34 +151,68 @@ if(isset($_POST['upload'])){
 	}
 	//delete user
 
-	if(isset($_POST['delete_p'])){
+	if(isset($_POST['delete_ap'])){
 
 			
-        $p_disease 		    = $_POST['p_disease'];
-		$p_disease_his 		= $_POST['p_disease_his'];
-        $p_id               =$_POST['p_id'];
+        // $p_disease 		    = $_POST['p_disease'];
+		// $p_disease_his 		= $_POST['p_disease_his'];
+        $a_id               =$_POST['a_id'];
        
 
-		if(empty($p_disease)|| empty($p_disease_his)){
-			header('location: ../views/all_patient.php?p_id={$p_id}');
-		}
-		else{
+	//	if(empty($p_disease)|| empty($p_disease_his)){
+	//		header('location: ../views/all_patient.php?p_id={$p_id}');
+	//	}
+	//	else{
 
 			$user = [
-				'p_disease'=> $p_disease,
-                'p_disease_his'=> $p_disease_his,
-				'p_id'=> $p_id
+				
+				'a_id'=> $a_id
 			];
 
-			$status = delete($user);
+			$status = delete_ap($user);
 
 			if($status){
-				header('location: ../views/all_patient.php?success=done');
+				header('location: ../views/all_appointment.php?success=done');
 			}
 			else{
-				header('location: ../views/edit_patient.php?id={$id}');
+				header('location: ../views/delete_appointment.php?id={$id}');
 			}
+	//	}
+	}
+//////////////////////////////delete appointment/////////////////////////
+
+
+
+if(isset($_POST['delete_ap'])){
+
+			
+	$p_disease 		    = $_POST['p_disease'];
+	$p_disease_his 		= $_POST['p_disease_his'];
+	$p_id               =$_POST['p_id'];
+   
+
+	if(empty($p_disease)|| empty($p_disease_his)){
+		header('location: ../views/all_patient.php?p_id={$p_id}');
+	}
+	else{
+
+		$user = [
+			'p_disease'=> $p_disease,
+			'p_disease_his'=> $p_disease_his,
+			'p_id'=> $p_id
+		];
+
+		$status = delete($user);
+
+		if($status){
+			header('location: ../views/all_patient.php?success=done');
+		}
+		else{
+			header('location: ../views/edit_patient.php?id={$id}');
 		}
 	}
+}
+
+
 
 ?>

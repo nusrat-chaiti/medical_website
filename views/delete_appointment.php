@@ -5,7 +5,7 @@ require_once('../php/session_header.php');
 
 require_once('../service/userService.php');
 if (isset($_GET['id'])) {
-    $user = getByID_P($_GET['id']);
+    $user = getByID_app($_GET['id']);
 }else{
     header('location: all_patient.php?id={$id}');
 }
@@ -26,7 +26,7 @@ if (isset($_GET['id'])) {
 <div class="dash-info">
 <?php
 //  $doctorInfo = getByID($doctorId);
- $doctorInfo2 = getByID_D($doctorId);
+//  $doctorInfo2 = getByID_D($doctorId);
 
 ?>
    
@@ -37,27 +37,27 @@ if (isset($_GET['id'])) {
 			<legend align="center"><b>Edit patient disease history<b></legend>
 			<table>
 				<tr>
-					<td>patient id</td>
-					<td><?=$user['p_id']?></td>
+					<td>patient id:</td>
+					<td><?=$user['a_id']?></td>
 				</tr>
 				<tr>
-					<td>patient name</td>
+					<td>patient name:</td>
 					<td><?=$user ['p_name']?></td>
 				</tr>
 				<tr>
-					<td>patient disease</td>
-					<td><input type="text" name="p_disease" value="<?=$user ['p_disease']?>"></td>
+					<td>patient disease:</td>
+					<td><?=$user ['a_date']?></td>
 				</tr>
                 <tr>
-					<td>patient_disease_his</td>
-					<td><input type="text" name="p_disease_his" value="<?=$user ['p_disease_his']?>"></td>
+					<td>patient_disease_his: </td>
+					<td><?=$user ['a_time']?></td>
 				</tr>
                
 				<tr>
 					<td></td>
 					<td>
-						<input type="hidden" name="p_id" value="<?=$user['p_id']?>">
-						<input type="submit" name="delete_p" value="delete"> 
+						<input type="hidden" name="a_id" value="<?=$user['a_id']?>">
+						<input type="submit" name="delete_ap" value="delete"> 
 						<!-- <a href="all_users.php">Back</a> -->
 					</td>
 				</tr>

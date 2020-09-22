@@ -129,7 +129,7 @@ $doctorId=$_SESSION['user_id'];
           <p><b>EMAIL:<?= $doctorInfo ['email']?></b><?php  ?></p><br>
 
                 <p><b>DEGREE:</b><?= $doctorInfo2 ['d_degree']?></p><br>
-                <p><b>DEGREE:</b><?= $doctorInfo2 ['d_specialist']?></p><br>
+                <p><b>SPECIALIST:</b><?= $doctorInfo2 ['d_specialist']?></p><br>
 
                 <p><b>WORK PLACE:</b><?= $doctorInfo2 ['d_workplace']?></p><br>
                 <p><b>ABOUT:</b><?= $doctorInfo2 ['d_about']?></p>

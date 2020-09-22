@@ -133,6 +133,45 @@ function d_remover()
    
 }
 
+/////////////////////////////////////specialist////////////////////////////
+
+
+function s_empty()
+{
+   var uname = document.getElementById("specialist").value;
+   var ulength =uname.length;
+   
+   if(uname == "")
+   {  
+       document.getElementById("specialist_Msg").innerHTML="field can't be empty";
+       
+   }
+
+   else if( (uname>='A' && uname<='Z' || uname>='a'&& uname<='z') && ulength< 3)
+   {   
+        document.getElementById("specialist_Msg").innerHTML="length can't be less then 3 charecter";  
+       
+   }
+   
+   
+   
+
+   else if( uname>='A' && uname<='Z' || uname>='a'&& uname<='z')
+   {
+       Validate();
+       
+   } 
+
+   
+}
+ 
+function s_remover()
+{
+   document.getElementById('specialist_Msg').innerHTML = "";
+   
+}
+
+
 ///////////////////////////////workplace//////////////////
 
 

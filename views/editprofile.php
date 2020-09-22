@@ -128,6 +128,10 @@ $doctorId=$_SESSION['user_id'];
                 <tr>
 					<td>Degree</td>
 					<td><input type="text" id="degree" name="d_degree" value="<?=$doctorInfo2 ['d_degree']?>" onkeyup="d_remover()" onblur="d_empty()"><b><i id="degree_Msg"></i></b><br></td>
+                </tr>
+                <tr>
+					<td>specialist</td>
+					<td><input type="text" id="specialist" name="d_specialist" value="<?=$doctorInfo2 ['d_specialist']?>" onkeyup="s_remover()" onblur="s_empty()" ><b><i id="specialist_Msg"></i></b><br></td>
 				</tr>
                 <tr>
 					<td>Workplace</td>

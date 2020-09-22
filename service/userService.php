@@ -63,6 +63,19 @@
 		return $row;
 		mysqli_close($conn);
 	}
+	function getByID_app($id){
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+	  $sql = "SELECT * FROM appointment WHERE a_id='{$id}'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		return $row;
+		mysqli_close($conn);
+	}
 
 	// function getAllUser($userName){
 	// 	$conn = dbConnection();
@@ -244,7 +257,7 @@ function validate($info){
 			echo "DB connection error";
 		}
 
-		$sql = "update doctor set d_degree='{$user['d_degree']}', d_workplace='{$user['d_workplace']}',d_about='{$user['d_about']}' where d_id={$user['d_id']}";
+		$sql = "update doctor set d_degree='{$user['d_degree']}',d_specialist='{$user['d_specialist']}', d_workplace='{$user['d_workplace']}',d_about='{$user['d_about']}' where d_id={$user['d_id']}";
 
 		if(mysqli_query($conn, $sql)){
 			return true;
@@ -433,6 +446,22 @@ function validate($info){
 			return false;
 		}
 	}
+//////////////////////delete_ appointment///////////////////
+
+function delete_ap($user){
+	$conn = dbConnection();
+	if(!$conn){
+		echo "DB connection error";
+	}
+
+	$sql = "DELETE FROM `appointment` WHERE a_id={$user['a_id']}";
+
+	if(mysqli_query($conn, $sql)){
+		return true;
+	}else{
+		return false;
+	}
+}
 
 
 	
