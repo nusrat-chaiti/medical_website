@@ -56,7 +56,7 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="about.html"> About Me</a>
+                        <a href="about.php"> About Me</a>
                     </td>
                 </tr>
                     <tr>

@@ -65,12 +65,12 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="searchdoc.html">Search Doctors</a>
+                        <a href="searchdoc.php">Search Doctors</a>
                     </td>
                 </tr>
                     <tr>
                     <td>
-                        <a href="searchhos.html">Search Hospitals</a>
+                        <a href="searchhos.php">Search Hospitals</a>
                     </td>
                 </tr>
                     <tr>

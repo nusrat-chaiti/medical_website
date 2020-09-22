@@ -76,7 +76,7 @@
                 </tr>
                     <tr>
                     <td>
-                        <a href="searchdoc.html">Search Doctors</a>
+                        <a href="searchdoc.php">Search Doctors</a>
                     </td>
                 </tr>
                     <tr>
