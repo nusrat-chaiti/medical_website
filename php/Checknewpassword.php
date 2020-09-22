@@ -6,12 +6,17 @@
 
 		$password1 = $_POST['password1'];
         $password2 = $_POST['password2'];
+		$password3 = $_POST['password3'];
         
         $uname =  $_SESSION['uname'];
-        if($password1=="" && $password2=="")
+        if($password1=="" && $password2=="" && $password3=="" )
         {
             echo"Can not be empty";
         }
+		else if($password2 != $password3)
+		{
+			echo"New entered and re-entered password is not same";
+		}
         else {
             $user = [
 				'password1'=> $password1,
