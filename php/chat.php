@@ -6,7 +6,7 @@
 	if(isset($_POST['submit'])){
 
 		$message = $_POST['message'];
-        $username = $_SESSION['username'];
+        $username = $_SESSION['uname'];
         
 
 	
